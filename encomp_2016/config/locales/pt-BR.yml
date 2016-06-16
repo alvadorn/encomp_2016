@@ -1,0 +1,22 @@
+pt-BR:
+  activerecord:
+    models:
+      lecture: Palestra
+    attributes:
+      lecture:
+        start_time: "Horário de ínicio"
+        name: "Nome"
+        description: "Descrição"
+        panelist: "Palestrante"
+  helpers:
+    label:
+      lecture:
+        name: "Nome"
+        panelist: "Palestrante"
+        start_time: "Horário de ínicio"
+        end_time: "Horário de termino"
+        description: "Descrição"
+    submit:
+      create: Adicionar %{model}
+      update: Atualizar %{model}
+      submit: Salvar %{model}

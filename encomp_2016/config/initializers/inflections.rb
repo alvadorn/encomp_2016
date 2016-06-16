@@ -14,3 +14,5 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym 'RESTful'
 # end
+
+I18n.l Date.today, :format => :long
