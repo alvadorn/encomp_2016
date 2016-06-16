@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
 
+  resources :news
+  resources :workshops
+  # root routes
   root "home#index"
 
-  resources :lectures
+  # public routes
+  get "lectures#index"
+  #get "subscribe" => "participants#new"
+  #resources :lectures
+
+  # admin routes
+  #namespace "admin" do
+  #end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
