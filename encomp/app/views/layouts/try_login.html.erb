@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ENCOMP Admin</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% unless (notice.blank? || alert.blank?) %>
+    <div class="float-center">
+      <div class="row">
+      <% unless notice.blank? %>
+        <div class="small-12 columns">
+          <p class="notice"><%= notice %></p>
+        </div>
+      <% end %>
+      <% unless alert.blank? %>
+        <div class="small-12 columns">
+          <p class="alert"><%= alert %></p>
+        </div>
+      <% end %>
+      </div>
+    </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

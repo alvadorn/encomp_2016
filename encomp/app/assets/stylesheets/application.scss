@@ -12,6 +12,12 @@
  *
  *= require_tree .
  *= require_self
+//= require foundation_and_overrides
+
  */
- @import "bootstrap-sprockets";
- @import "bootstrap";
+ @import "foundation_and_overrides";
+
+$global-radius: 3;
+.button-radius {
+  @include button-base;
+};
