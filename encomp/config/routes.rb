@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   scope "/admin" do
     authenticated :user do
-      root to: "home#admin_index"
+      root to: "home#admin_index", as: "admin_index"
     end
     root to: redirect("/admin/sign_in")
     resources :users, only: [ :index, :delete, :update ]
