@@ -20,4 +20,20 @@ class User < ApplicationRecord
   def exists?
     self.removed
   end
+
+  rails_admin do
+    list do
+      field(:name) { label "Nome" }
+      field :email
+      field(:paid) { label "Pago" }
+    end
+    edit do
+      group :default do
+          label "Usuarios"
+        field :name do
+          label "Nome"
+        end
+      end
+    end
+  end
 end

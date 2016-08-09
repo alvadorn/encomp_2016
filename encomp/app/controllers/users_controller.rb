@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   layout "admin", except: [ :new, :create ]
 
   def index
+    @user = current_user
   end
 
   def delete

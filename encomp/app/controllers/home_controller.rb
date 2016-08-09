@@ -6,6 +6,7 @@ class HomeController < AdminController
   end
 
   def admin_index
+    @user = current_user
     render layout: "admin"
   end
 

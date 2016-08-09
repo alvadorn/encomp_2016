@@ -12,12 +12,6 @@
  *
  *= require_tree .
  *= require_self
-//= require foundation_and_overrides
-
+ *= require bootstrap-sass/assets/stylesheets/_bootstrap
+ *= require font-awesome/scss/font-awesome
  */
- @import "foundation_and_overrides";
-
-$global-radius: 3;
-.button-radius {
-  @include button-base;
-};

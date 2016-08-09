@@ -10,5 +10,4 @@ Rails.application.routes.draw do
     root to: redirect("/admin/sign_in")
     resources :users, only: [ :index, :delete, :update ]
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
