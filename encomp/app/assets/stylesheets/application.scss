@@ -1,17 +1,250 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- *= require bootstrap-sass/assets/stylesheets/_bootstrap
- *= require font-awesome/scss/font-awesome
- */
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*/
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body {
+  border-top: 2px solid #015f54;
+}
+
+.limpar {
+  clear: both;
+}
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5 {
+  padding: 0;
+  margin: 0;
+}
+
+
+#siteCorpo {
+  background: #fff;
+}
+
+#topo {
+  padding-top: 20px;
+}
+
+
+#siteMenu {
+  margin-top: 10%;
+}
+
+
+#siteMenu ul li a {
+  text-decoration: none;
+  color: #888;
+  font-size: 18px;
+}
+
+
+#menu-background, #menuMobiConteudo, #menuMobibg {
+  display: none;
+}
+
+
+.nav-tabs {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.nav-tabs ul li a {
+  color: #015f54;
+}
+
+.nav-tabs .active {  }
+
+.textos {
+  line-height: 180%;
+  font-size: 17px;
+  color: #666;
+  text-align: justify;
+}
+
+.titulosPrincipais {}
+
+.titulosPrincipais h3{ font-size: 40px; }
+
+
+@media (max-width: 600px) {
+  .titulosPrincipais h3 {
+    font-size: 20px;
+  }
+}
+
+
+.sobraimagens {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.12);
+}
+
+
+
+@media (max-width: 600px) {
+  #siteMenu {
+    display: none;
+  }
+
+  .limpar1 {
+    clear: both;
+  }
+
+  #menuMobibg {
+    margin-top: 5%;
+    display: block;
+    width: 100%;
+    background: #f1f1f1;
+    height: 40px;
+  }
+
+  #icomeMenumobi {  }
+  #icomeMenumobi span {
+    color: #015f54;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+
+  #menu-background {
+    width: 100%;
+    height: 113%;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    background: red;
+    float: left;
+    /*background: url('/img/fundomoby.jpg') no-repeat ;*/
+    background-size: cover;
+    transform: translate3d(0px, 0px, 0px);
+    visibility: visible;
+    transition: transform 0.5s cubic-bezier(.47,-0.15,.98,.34) 0s;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.47, -0.15, 0.98, 0.34);
+    transition-delay: 0s;
+  }
+
+  #bginterno {
+    opacity: 0.7;
+    background-color: #0c9ba2;
+    width: 100%;
+    height: 113%;
+    z-index: 1000;
+    position: absolute;
+  }
+
+  #menuMobiConteudo {
+    position: absolute;
+    width: 100%;
+    height: 113%;
+    z-index: 1000;
+    display: none;
+
+  }
+
+  #bt-meno-fechar { right: 2%;
+    top:2%;
+    position: absolute;
+    font-size: 1.5em;
+    font-weight: normal;
+    color: #fff;
+    cursor: pointer;
+  }
+
+
+  #menu-miolo {
+    margin-left: 10px;
+    margin-top: 5%;
+    opacity: 1;
+  }
+  #menu-miolo strong {
+    color: #fff;
+    opacity: 1;
+    font-size: 1.7em;
+  }
+  #menu-miolo ul { }
+  #menu-miolo ul li {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  #menu-miolo ul li a {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+  }
+  #menu-miolo ul li a:hover {
+    text-decoration: none;
+    color: #E9ED6C;
+  }
+
+  #menu-miolo ul li a span {
+    font-size: 14px;
+    margin-top: -3px;
+  }
+}
+
+
+
+/* Destaque	*/
+
+#barraDestaque {
+  height: 350px;
+  width: 100%;
+  background: image-url('bgdestaque.jpg') no-repeat top center;
+  margin-top: 3%; color: #fff;
+}
+
+#barraDestaqueInter {
+  background: #015f54;
+  opacity: 0.8;
+  height: 100%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.12);
+}
+
+#barraDestaque h2 {
+  font-size: 40px;
+}
+
+#barraDestaque p {
+  font-size: 20px;
+}
+
+/* MIniCursos*/
+
+#conteudo_minicursos {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 700px;
+}
+
+#toTop {
+  background: none repeat scroll 0 0 #015f54;
+  border: 1px solid #ccc;
+  bottom: 10px;
+  color: #fff;
+  cursor: pointer;
+  display: none;
+  font-family: verdana;
+  font-size: 20px;
+  padding: 5px;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  width: 50px;
+}

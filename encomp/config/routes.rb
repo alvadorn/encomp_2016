@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users, path: "/admin"
-
   root to: "home#index"
 
   scope "/admin" do

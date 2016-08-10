@@ -34,7 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'pg'
 
 # bootstrap
-#gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # foundation
 #gem 'foundation-rails'
@@ -42,6 +42,10 @@ gem 'pg'
 # Devise secure
 gem 'devise', '~> 4.2.0'
 gem 'pundit'
+
+
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
