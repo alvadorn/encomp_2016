@@ -286,6 +286,7 @@
   </div>
 
   <%= yield %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <script type="text/javascript">
 
 
@@ -322,6 +323,7 @@
   });
 
   $( "#icomeMenumobi" ).click(function() {
+    console.log("trying");
     $('.abrindo').show('600');
   });
 
@@ -329,6 +331,5 @@
     $('.abrindo').hide('1000');
   });
   </script>
-  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
 </body>
 </html>
