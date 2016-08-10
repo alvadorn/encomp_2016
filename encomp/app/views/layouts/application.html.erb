@@ -159,58 +159,10 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="dia20">
-          <br>
-          <div class="panel panel-default">
-            <div class="panel-heading">Curso de Wordpress</div>
-            <div class="panel-body">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </div>
-          </div>
-
-          <br>
-          <div class="panel panel-default">
-            <div class="panel-heading">Curso de Wordpress</div>
-            <div class="panel-body">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </div>
-          </div>
-
-
-        </div>
-        <div role="tabpanel" class="tab-pane" id="dia21">
-          <br>
-          <div class="panel panel-default">
-            <div class="panel-heading">Curso de Arduino</div>
-            <div class="panel-body">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </div>
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="dia22">
-          <br>
-          <div class="panel panel-default">
-            <div class="panel-heading">Curso de Arduino</div>
-            <div class="panel-body">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </div>
-          </div>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="dia23">
-          <br>
-          <div class="panel panel-default">
-            <div class="panel-heading">Curso de Arduino</div>
-            <div class="panel-body">
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-            </div>
-          </div>
-
-        </div>
+        <%= render template: "courses/index_by_dates", locals: { day20: Course.where(day: Date.new(2016, 9, 20)),
+                                                                 day21: Course.where(day: Date.new(2016, 9, 21)),
+                                                                 day22: Course.where(day: Date.new(2016, 9, 22)),
+                                                                 day23: Course.where(day: Date.new(2016, 9, 23))} %>
       </div>
 
     </div>
