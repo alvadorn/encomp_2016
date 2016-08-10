@@ -21,3 +21,7 @@
 .byebug_history
 
 vendor/assets/components/*
+
+.env
+
+public/assets/*
