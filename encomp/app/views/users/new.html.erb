@@ -1,0 +1,53 @@
+<div class="container">
+  <% if DateTime.now >= DateTime.new(2016,10,20) %>
+    <div class="row">
+
+        <h2 class="text-center">Inscrição</h2>
+
+    </div>
+    <div class="row">
+    <%= form_for @user, html: { class: "col-sm-offset-5 col-sm-7" },url: user_create_path do |f|%>
+      <%= notice %>
+
+      <div class="field">
+        <%= f.label :name, "Nome" %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.check_box :needs_republic %>
+        <%= f.label :needs_republic, "Necessita de república solidária?" %>
+      </div>
+
+      <div class="field">
+
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Inscrever-se" %>
+      </div>
+    <% end %>
+    </div>
+  <% else %>
+    <h2 class="text-center">Desculpe, as inscrições ainda não começaram.</h2> <br />
+    <% if false %>
+      <h3 class="text-center">Faltam</div> <br />
+      <div class="countdown-timer">
+      <div class="row">
+        <div class="col-sm-offset-5 col-sm-6">
+          <span id="ct-days"></span> dias
+          <span id="ct-hours"></span> horas
+          <span id="ct-minutes"></span> minutos
+          <span id="ct-seconds"></span> segundos
+        </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+
+</div>

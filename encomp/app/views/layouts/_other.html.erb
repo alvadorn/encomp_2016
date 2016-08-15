@@ -1,0 +1,195 @@
+<div id="barraDestaque">
+
+  <div id="barraDestaqueInter">
+
+    <br>
+    <br>
+    <h2 class="text-center">II ENCOMP</h2>
+    <br>
+    <p class="text-center">2° Encontro de Computação do Norte do Espirito Santo</p>
+
+    <br>
+    <p class="text-center">20 a 23 de Setembro	</p>
+    <p class="text-center">UFES - Campus São Mateus</p>
+
+  </div>
+</div>
+
+
+<br>
+<br>
+
+<div name="sobre" class="container conteudos" id="sobre">
+
+  <div class="titulosPrincipais">
+    <h3 class="text-center">SOBRE</h3>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <img src="<%= image_url("auditorio.JPG") %>" alt="Primeiro Encomp" class="imgs-sobre sobraimagens">
+      <img src="<%= image_url("auditorio2.jpg") %>" alt="Primeiro Encomp" class="imgs-sobre sobraimagens">
+    </div>
+
+    <div class="col-xs-12 col-sm-6 textos">
+      <p>O 2º Encontro de Computação do Norte do Espírito Santo (II ENCOMP), evento de cunho técnico-científico que busca inserir no âmbito do desenvolvimento tecnológico e computacional estudantes de instituições espírito-santenses e demais interessados.</p>
+      <p>O II ENCOMP é um evento idealizado pelos Centros Acadêmicos de Engenharia de Computação (CAEC) e Ciência da Computação (CACCOMP) do Centro Universitário Norte do Espírito Santo (CEUNES), campus da Universidade Federal do Espírito Santo (UFES) localizado no município de São Mateus – ES. O evento, cuja primeira e única edição ocorreu em outubro de 2015, é organizado por estudantes dos cursos supracitados, tanto membros quanto não-membros dos Centros Acadêmicos, e apoiado pelo Departamento de Computação e Eletrônica (DCEL).</p>
+      <p>O evento acontecerá nos dias 20 a 23 de setembro nas dependências do centro universitário, podendo contar com laboratórios do Instituto Federal do Espírito Santo (IFES) – Campus São Mateus para a realização de alguns minicursos.</p>
+      <p>O evento contará com palestras, minicursos, visita técnica e apresentações de projetos, ministrados por convidados graduandos, graduados, mestres e doutores de diferentes áreas da computação, vinculados tanto ao centro universitário quanto a outras ​instituições, capixabas e de outros estados.</p>
+    </div>
+
+
+
+  </div>
+
+</div>
+
+
+<br>
+<br>
+
+<hr>
+<!-- -->
+<br>
+<br>
+
+<div name="minicursos" class="container conteudos" id="minicursos">
+
+  <div class="titulosPrincipais">
+    <h3 class="text-center">MINICURSOS</h3>
+  </div>
+  <br>
+
+
+  <div id="conteudo_minicursos">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active">
+        <a href="#dia20" aria-controls="dia20" role="tab" data-toggle="tab">20/09<br> Terça</a>
+      </li>
+      <li role="presentation">
+        <a href="#dia21" aria-controls="dia21" role="tab" data-toggle="tab">
+          21/09<br>Quarta
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="#dia22" aria-controls="dia22" role="tab" data-toggle="tab">22/09<br>Quinta</a>
+      </li>
+      <li role="presentation"><a href="#dia23" aria-controls="dia23" role="tab" data-toggle="tab">23/09<br>Sexta</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <%= render template: "courses/index_by_dates", locals: { day20: Course.where(day: Date.new(2016, 9, 20)),
+                                                               day21: Course.where(day: Date.new(2016, 9, 21)),
+                                                               day22: Course.where(day: Date.new(2016, 9, 22)),
+                                                               day23: Course.where(day: Date.new(2016, 9, 23))} %>
+    </div>
+
+  </div>
+
+
+
+</div>
+
+<hr>
+
+
+
+
+
+<br>
+<br>
+<!-- Palestras -->
+<div name="palestras" class="container conteudos" id="palestras">
+
+  <div class="titulosPrincipais">
+    <h3 class="text-center">PALESTRAS</h3>
+  </div>
+  <br>
+
+  <div id="conteudopalestras">
+
+    <table class="table table-hover">
+      <tr>
+        <th></th>
+        <th>9:30</th>
+        <th>10:30</th>
+        <th>11:30</th>
+        <th>13:30</th>
+      </tr>
+
+      <tr>
+        <th>Dia 20</th>
+        <td>Abertura</td>
+        <td>Palestra teste</td>
+        <td>Outra palestra</td>
+        <td>Almoço</td>
+      </tr>
+      <tr>
+        <th>Dia 21</th>
+        <td>Abertura</td>
+        <td>Palestra teste</td>
+        <td>Outra palestra</td>
+        <td>Almoço</td>
+      </tr>
+      <tr>
+        <th>Dia 22</th>
+        <td>Abertura</td>
+        <td>Palestra teste</td>
+        <td>Outra palestra</td>
+        <td>Almoço</td>
+      </tr>
+      <tr>
+        <th>Dia 23</th>
+        <td>Abertura</td>
+        <td>Palestra teste</td>
+        <td>Outra palestra</td>
+        <td>Almoço</td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+
+
+
+</div>	<!-- Fim Palestras -->
+
+<!-- -->
+
+
+<br>
+<br>
+<!-- Mapas -->
+<div name="mapa" class="container conteudos" id="mapa">
+
+  <div class="titulosPrincipais">
+    <h3 class="text-center">MAPA</h3>
+  </div>
+  <br>
+
+
+  <div>
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.7264644373263!2d-39.86439439540646!3d-18.676266753091397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xca0cd4614ba4c1%3A0xd6dde30c8ab9461b!2sUniversidade+Federal+do+Esp%C3%ADrito+Santo%2C+Campus+de+S%C3%A3o+Mateus!5e0!3m2!1spt-BR!2sbr!4v1470782300435" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+  </div>
+
+
+
+
+</div>	<!-- Fim Mapa -->
+
+
+<!-- -->
+
+
+<br>
+<br>
+
+<hr>
+<!-- -->

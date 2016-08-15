@@ -1,0 +1,23 @@
+<h2>Inscrição</h2>
+
+<%= form_for @user, url: inscription_create_path do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :name, "Nome" %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email %>
+  </div>
+
+  <div class="field">
+
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Inscrever-se" %>
+  </div>
+<% end %>

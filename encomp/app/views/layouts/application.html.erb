@@ -24,24 +24,30 @@
       <br>
       <br>
 
+
+      <% if controller.controller_name == "users" && controller.action_name == "new" %>
       <ul>
-        <li> <a href="#inicio"> <span class="glyphicon glyphicon-chevron-right"></span>&nbsp; HOME</a></li>
-        <li><a href="#sobre"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; SOBRE</a></li>
-        <li><a href="#minicursos"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MINICURSOS</a></li>
-        <li><a href="#palastras"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PALESTRAS</a></li>
-        <li><a href="#inscricoes"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; INSCRIÇÕES</a></li>
-        <li><a href="#mapa"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MAPA</a></li>
+        <li> <a href="<%= root_path %>"> <span class="glyphicon glyphicon-chevron-right"></span>&nbsp; HOME</a></li>
+        <li><a href="<%= root_path %>#sobre"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; SOBRE</a></li>
+        <li><a href="<%= root_path %>#minicursos"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MINICURSOS</a></li>
+        <li><a href="<%= root_path %>#palastras"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PALESTRAS</a></li>
+        <li><a href="<%= user_inscription_path %>"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; INSCRIÇÕES</a></li>
+        <li><a href="<%= root_path %>#mapa"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MAPA</a></li>
       </ul>
+      <% else %>
+      <ul>
+        <li> <a href="<%= root_path %>#inicio"> <span class="glyphicon glyphicon-chevron-right"></span>&nbsp; HOME</a></li>
+        <li><a href="<%= root_path %>#sobre"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; SOBRE</a></li>
+        <li><a href="<%= root_path %>#minicursos"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MINICURSOS</a></li>
+        <li><a href="<%= root_path %>#palastras"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PALESTRAS</a></li>
+        <li><a href="<%= user_inscription_path %>"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; INSCRIÇÕES</a></li>
+        <li><a href="<%= root_path %>#mapa"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MAPA</a></li>
+      </ul>
+      <% end %>
+
     </div>
 
   </div>
-
-
-
-
-
-
-
 
   <div class="container" id="siteCorpo">
     <div class="row">
@@ -59,12 +65,12 @@
 
       <div id="siteMenu" class="col-xs-12 col-sm-9 col-md-9">
         <ul class="row">
-          <li class="col-xs-2"><a href="#inicio">HOME</a></li>
-          <li class="col-xs-2"><a href="#sobre">SOBRE</a></li>
-          <li class="col-xs-2"><a href="#minicursos">MINICURSOS</a></li>
-          <li class="col-xs-2"><a href="#palestras">PALESTRAS</a></li>
-          <li class="col-xs-2"><a href="#">INSCRIÇÕES</a></li>
-          <li class="col-xs-2"><a href="#mapa">MAPA</a></li>
+            <li class="col-xs-2"><a href="<%= root_path %>#inicio">HOME</a></li>
+            <li class="col-xs-2"><a href="<%= root_path %>#sobre">SOBRE</a></li>
+            <li class="col-xs-2"><a href="<%= root_path %>#minicursos">MINICURSOS</a></li>
+            <li class="col-xs-2"><a href="<%= root_path %>#palestras">PALESTRAS</a></li>
+            <li class="col-xs-2"><a href="<%= user_inscription_path %>">INSCRIÇÕES</a></li>
+            <li class="col-xs-2"><a href="<%= root_path %>#mapa">MAPA</a></li>
         </ul>
 
       </div>
@@ -72,204 +78,12 @@
     </div>
   </div>
 
+    <% if controller.controller_name == "users" && controller.action_name == "new" %>
+      <%= yield %>
+    <% else %>
+      <%= render partial: "layouts/other" %>
+    <% end %>
 
-
-  <div id="barraDestaque">
-
-    <div id="barraDestaqueInter">
-
-      <br>
-      <br>
-      <h2 class="text-center">II ENCOMP</h2>
-      <br>
-      <p class="text-center">2° Encontro de Computação do Norte do Espirito Santo</p>
-
-      <br>
-      <p class="text-center">20 a 23 de Setembro	</p>
-      <p class="text-center">UFES - Campus São Mateus</p>
-
-    </div>
-  </div>
-
-
-  <br>
-  <br>
-
-  <div name="sobre" class="container conteudos" id="sobre">
-
-    <div class="titulosPrincipais">
-      <h3 class="text-center">SOBRE</h3>
-    </div>
-    <br>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <img src="<%= image_url("auditorio.JPG") %>" alt="Primeiro Encomp" class="img-responsive sobraimagens">
-      </div>
-
-      <div class="col-xs-12 col-sm-6 textos">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-
-        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like </p>
-      </div>
-
-
-
-    </div>
-
-  </div>
-
-
-  <br>
-  <br>
-
-  <hr>
-  <!-- -->
-
-
-
-  <br>
-  <br>
-
-  <div name="minicursos" class="container conteudos" id="minicursos">
-
-    <div class="titulosPrincipais">
-      <h3 class="text-center">MINICURSOS</h3>
-    </div>
-    <br>
-
-
-    <div id="conteudo_minicursos">
-
-      <!-- Nav tabs -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active">
-          <a href="#dia20" aria-controls="dia20" role="tab" data-toggle="tab">20/09<br> Terça</a>
-        </li>
-        <li role="presentation">
-          <a href="#dia21" aria-controls="dia21" role="tab" data-toggle="tab">
-            21/09<br>Quarta
-          </a>
-        </li>
-        <li role="presentation">
-          <a href="#dia22" aria-controls="dia22" role="tab" data-toggle="tab">22/09<br>Quinta</a>
-        </li>
-        <li role="presentation"><a href="#dia23" aria-controls="dia23" role="tab" data-toggle="tab">23/09<br>Sexta</a></li>
-      </ul>
-
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <%= render template: "courses/index_by_dates", locals: { day20: Course.where(day: Date.new(2016, 9, 20)),
-                                                                 day21: Course.where(day: Date.new(2016, 9, 21)),
-                                                                 day22: Course.where(day: Date.new(2016, 9, 22)),
-                                                                 day23: Course.where(day: Date.new(2016, 9, 23))} %>
-      </div>
-
-    </div>
-
-
-
-  </div>
-
-  <hr>
-
-
-
-
-
-  <br>
-  <br>
-  <!-- Palestras -->
-  <div name="palestras" class="container conteudos" id="palestras">
-
-    <div class="titulosPrincipais">
-      <h3 class="text-center">PALESTRAS</h3>
-    </div>
-    <br>
-
-    <div id="conteudopalestras">
-
-      <table class="table table-hover">
-        <tr>
-          <th></th>
-          <th>9:30</th>
-          <th>10:30</th>
-          <th>11:30</th>
-          <th>13:30</th>
-        </tr>
-
-        <tr>
-          <th>Dia 20</th>
-          <td>Abertura</td>
-          <td>Palestra teste</td>
-          <td>Outra palestra</td>
-          <td>Almoço</td>
-        </tr>
-        <tr>
-          <th>Dia 21</th>
-          <td>Abertura</td>
-          <td>Palestra teste</td>
-          <td>Outra palestra</td>
-          <td>Almoço</td>
-        </tr>
-        <tr>
-          <th>Dia 22</th>
-          <td>Abertura</td>
-          <td>Palestra teste</td>
-          <td>Outra palestra</td>
-          <td>Almoço</td>
-        </tr>
-        <tr>
-          <th>Dia 23</th>
-          <td>Abertura</td>
-          <td>Palestra teste</td>
-          <td>Outra palestra</td>
-          <td>Almoço</td>
-        </tr>
-
-      </table>
-
-    </div>
-
-
-
-
-
-  </div>	<!-- Fim Palestras -->
-
-  <!-- -->
-
-
-  <br>
-  <br>
-  <!-- Mapas -->
-  <div name="mapa" class="container conteudos" id="mapa">
-
-    <div class="titulosPrincipais">
-      <h3 class="text-center">MAPA</h3>
-    </div>
-    <br>
-
-
-    <div>
-
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3779.7264644373263!2d-39.86439439540646!3d-18.676266753091397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xca0cd4614ba4c1%3A0xd6dde30c8ab9461b!2sUniversidade+Federal+do+Esp%C3%ADrito+Santo%2C+Campus+de+S%C3%A3o+Mateus!5e0!3m2!1spt-BR!2sbr!4v1470782300435" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
-
-
-
-
-  </div>	<!-- Fim Mapa -->
-
-
-  <!-- -->
-
-
-  <br>
-  <br>
-
-  <hr>
-  <!-- -->
 
 
   <a href="javascript:void()" id="toTop"><span class="glyphicon glyphicon-menu-up"></span></a>
@@ -285,7 +99,6 @@
     <p class="text-center">&copy; Encomp 2016</p>
   </div>
 
-  <%= yield %>
   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   <script type="text/javascript">
 
