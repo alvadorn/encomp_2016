@@ -8,6 +8,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   username: encomp_2016
+  password: encomp_2016
   pool: 5
   timeout: 5000
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160815013843) do
+ActiveRecord::Schema.define(version: 20160816040142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,35 +23,32 @@ ActiveRecord::Schema.define(version: 20160815013843) do
     t.date     "day",                     null: false
   end
 
-  create_table "lectures", force: :cascade do |t|
-    t.string   "name"
-    t.text     "description"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.string   "panelist"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: ""
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                  default: "",            null: false
+    t.string   "encrypted_password",     default: "",            null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,             null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.boolean  "paid",                   default: false, null: false
-    t.boolean  "admin",                  default: false, null: false
-    t.boolean  "removed",                default: false, null: false
-    t.boolean  "auxiliar",               default: false, null: false
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "needs_republic",         default: false
+    t.boolean  "paid",                   default: false,         null: false
+    t.boolean  "admin",                  default: false,         null: false
+    t.boolean  "removed",                default: false,         null: false
+    t.boolean  "auxiliar",               default: false,         null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.boolean  "accomodation",           default: false
+    t.string   "shirt",                  default: "P-Masculino"
+    t.string   "cpf"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "university"
+    t.string   "course"
+    t.integer  "payment_preference",     default: 0
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

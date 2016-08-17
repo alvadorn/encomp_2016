@@ -13,6 +13,13 @@
 */
 
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+form div.form-group input[type=text],input[type=email],input[type=tel] {
+  width: 30rem;
+}
+
+.success-msg {
+ color: green;   
+}
 
 .imgs-sobre {
   display: block;
