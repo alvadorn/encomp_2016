@@ -10,8 +10,8 @@ Rails.application.routes.draw do
               :controllers => { :registrations => "users/registrations" }
   root to: "home#index"
 
-  get "registro", to: "users#new", as: "user_inscription"
-  post "registro", to: "users#create", as: "user_create"
+  get "inscricao", to: "users#new", as: "user_inscription"
+  post "inscricao", to: "users#create", as: "user_create"
 
   scope "/admin" do
     authenticated :user do

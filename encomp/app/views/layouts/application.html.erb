@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Encomp - Encontro de Computação do Norte do Espírito Santo</title>
+  <meta name="description" content="O 2º Encontro de Computação do Norte do Espírito Santo realizado na cidade de São Mateus. Evento este que possui cunho técnico científico, busca a inserção no âmbito do desenvolvimento tecnológico." >
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="evento, computação, são mateus, encontro, tecnologia, desenvolvimento, espírito santo, encomp">
   <%= stylesheet_link_tag    "application" %>
   <%= csrf_meta_tags %>
 </head>
@@ -78,7 +81,7 @@
     </div>
   </div>
 
-    <% if controller.controller_name == "users" && controller.action_name == "new" %>
+    <% if controller.controller_name == "users" && (controller.action_name == "new" || controller.action_name == "create") %>
       <%= yield %>
     <% else %>
       <%= render partial: "layouts/other" %>

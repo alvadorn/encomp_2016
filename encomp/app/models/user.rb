@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
-
+  validates_presence_of [:name, :cpf, :phone, :university, :course]
 
   def is_admin?
     self.admin

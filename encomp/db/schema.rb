@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20160816040142) do
     t.boolean  "auxiliar",               default: false,         null: false
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
-    t.boolean  "accomodation",           default: false
+    t.string   "accomodation"
     t.string   "shirt",                  default: "P-Masculino"
     t.string   "cpf"
     t.string   "phone"

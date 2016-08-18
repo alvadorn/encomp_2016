@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  # Default Locale
+  config.i18n.default_locale = :'pt-BR'
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 

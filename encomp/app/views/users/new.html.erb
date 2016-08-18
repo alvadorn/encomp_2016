@@ -1,5 +1,5 @@
 <div class="container">
-  <% if DateTime.now >= DateTime.new(2016,7,20) %>
+  <% if DateTime.now >= DateTime.new(2016,10,20) %>
     <div class="row">
 
         <h3 class="text-center col-sm-offset-2">INSCRIÇÃO</h2>
@@ -19,8 +19,8 @@
     <div class="row">
     <%= form_for @user, html: { class: "col-sm-offset-5 col-sm-7", role: "form" },url: user_create_path do |f|%>
 
-      <% if @user.errors %>
-        <div id="error_explanation">
+      <% if @user.errors.count > 0 %>
+        <div id="error_explanation" class="form-group">
           <ul>
           <% @user.errors.full_messages.each do |message| %>
             <li><%= message %></li>
