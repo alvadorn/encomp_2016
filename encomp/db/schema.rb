@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20160816040142) do
     t.date     "day",                     null: false
   end
 
+  create_table "courses_users", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
+  end
+
+  create_table "lectures", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.string   "panelist"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+
   create_table "users", force: :cascade do |t|
     t.string   "name",                   default: ""
     t.string   "email",                  default: "",            null: false
