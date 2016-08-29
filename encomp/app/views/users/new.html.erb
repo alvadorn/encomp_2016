@@ -76,9 +76,12 @@
         <%= f.label :accomodation, "Acomodação" %> <br>
         <%= f.select(:accomodation, ["Não necessário", "Misto", "Masculino", "Feminino"], { index: nil }) %>
       </div>
-      <div class="field">
-        <%= f.label :courses, "Minicursos" %>
-
+      <div class="field" id="minicourses">
+        <%= f.label :courses, "Minicursos" %><br />
+        <% @courses.each do |course| %>
+          <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %>
+          <br />
+        <% end %>
       </div>
       <div class="field">
 

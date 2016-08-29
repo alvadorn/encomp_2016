@@ -9,10 +9,14 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @courses = Course.all.order(:day)
   end
 
   def create
-    @user = User.new(user_params)
+    user = user_params
+    user[:courses].map! { |name| Course.find_by(name: name) }
+
+    @user = User.new(user)
     generated_password = Devise.friendly_token.first(8)
     @user.password = generated_password
     respond_to do |format|
@@ -23,6 +27,7 @@ class UsersController < ApplicationController
       else
         p "error"
         puts @user.errors
+        @courses = Course.all.order(:day)
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -38,7 +43,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :accomodation, :courses, :cpf, :shirt,
-     :address, :university, :course, :payment_preference)
+    params.require(:user).permit(:name, :email, :accomodation, :cpf, :shirt,
+     :address, :university, :course, :payment_preference, :phone, :courses => [])
   end
 end
