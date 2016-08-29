@@ -19,4 +19,5 @@ Course.create([
   {name: "Linux", desc: "", day: Date.new(2016,9,22)},
   {name: "Maratona de Programação", day: Date.new(2016,9,21)},
   {name: "Visita técnica", day: Date.new(2016,9,21)}
+
   ])
