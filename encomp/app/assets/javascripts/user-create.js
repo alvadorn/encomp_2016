@@ -1,5 +1,6 @@
 $(document).ready(function() {
   changeHidden();
+  changeHiddenDeposit();
 });
 
 $("#minicourses input[type=checkbox]").click(function() {
@@ -8,9 +9,23 @@ $("#minicourses input[type=checkbox]").click(function() {
   changeHidden();
 });
 
+$("#payment_preference_choose input[type=radio]").click(function() {
+  changeHiddenDeposit();
+});
+
 var changeHidden = function() {
   var checkMaratona = $("#user_courses_torneio_de_programao");
   var field = $("#user_team_name");
+  if (checkMaratona.is(":checked")) {
+    field[0].style.display = "inline";
+  } else {
+    field[0].style.display = "none";
+  }
+}
+
+var changeHiddenDeposit = function() {
+  var checkMaratona = $("#user_payment_preference_1");
+  var field = $("#pay_preference_bank");
   if (checkMaratona.is(":checked")) {
     field[0].style.display = "inline";
   } else {

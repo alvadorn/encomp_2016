@@ -1,5 +1,5 @@
 <div class="container">
-  <% if DateTime.now >= DateTime.new(2016,8,20) %>
+  <% if DateTime.now >= DateTime.new(2016,8,30) %>
     <div class="row">
 
         <h3 class="text-center col-sm-offset-2">INSCRIÇÃO</h2>
@@ -28,7 +28,7 @@
           </ul>
         </div>
       <% end %>
-
+      <p><strong>Valor de inscrição:</strong> R$ 25,00</p>
 
       <div class="form-group">
         <%= f.label :name, "Nome" %><br />
@@ -95,7 +95,7 @@
       </div>
       <div class="field">
 
-      <div class="form-group">
+      <div class="form-group" id="payment_preference_choose">
         <%= f.label :payment_preference, "Forma de pagamento de inscrição" %> <br>
         <%= f.label :payment_preference, class: "radio-inline" do %>
           <%= f.radio_button(:payment_preference, "1") %>
@@ -105,6 +105,9 @@
           <%= f.radio_button(:payment_preference, "2", checked: true) %>
           Pagamento direto a comissão financeira
         <% end %>
+        <div id="pay_preference_bank" style="display: none">
+          <p style="color: red"><strong>Em caso de depósito em conta, o comprovante deverá ser enviado em até 2 dias.</strong></p>
+        </div>
       </div>
 
       <div class="actions">
