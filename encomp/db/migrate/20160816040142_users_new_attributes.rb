@@ -9,6 +9,7 @@ class UsersNewAttributes < ActiveRecord::Migration[5.0]
       t.string :address
       t.string :university
       t.string :course
+      t.string :team_name
       t.integer :payment_preference, default: 0
     end
   end

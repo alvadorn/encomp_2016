@@ -5,7 +5,8 @@ class Courses < ActiveRecord::Migration[5.0]
       t.text :desc, default: ""
       t.timestamps null: false
       t.date :day, null: false
-      t.real :value, null: false
+      t.integer :value, null: false
+      t.integer :vacancies
     end
   end
 end

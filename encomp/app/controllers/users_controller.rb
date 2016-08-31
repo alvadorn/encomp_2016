@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
     @courses = Course.all.order(:day)
+    courses_map
   end
 
   def create
@@ -26,7 +27,11 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to user_inscription_path, notice: 'Inscrição realizada com sucesso.' }
         format.json { render :show, status: :created, location: @user }
-        html = TemplateRenderer.render("#{Rails.root}/lib/mail_views/inscricao.html.erb", person: @user.as_json(:include => :courses))
+        value_to_pay = 25
+        @user.courses.each { |k| value_to_pay += k.value }
+        person = @user.as_json(:include => :courses)
+        person["value_to_pay"] = value_to_pay
+        html = TemplateRenderer.render("#{Rails.root}/lib/mail_views/inscricao.html.erb", person: person)
         MailGun.send_mail(@user.email, "Inscrição realizada com sucesso!", html)
       else
         p "error"
@@ -48,6 +53,12 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :accomodation, :cpf, :shirt,
-     :address, :university, :course, :payment_preference, :phone, :courses => [])
+     :address, :university, :course, :payment_preference, :phone, :team_name, :courses => [])
+  end
+
+  def courses_map
+    @courses.map do |c|
+      c.vancancies_left = (c.vacancies - c.users.count)
+    end
   end
 end

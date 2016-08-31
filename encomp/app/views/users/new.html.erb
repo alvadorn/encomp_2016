@@ -79,13 +79,19 @@
       <div class="field" id="minicourses">
         <%= f.label :courses, "Minicursos" %><br />
         <% @courses.each do |course| %>
-          <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %>
+          <% if course.vacancies_left > 0 %>
+          <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %> - <strong>Valor</strong>: R$<%= course.value %>,00, <%= course.vacancies_left %> disponíveis
+          <% if course.name == "Torneio de Programação" %>
+            <div style="display: none" id="user_team_name">
+            <br />
+            <%= f.label :team_name, "Nome da equipe" %>
+            <br />
+            <input type="text" name="user[team_name]" id="user_team_name_value" value="" placeholder="Nome da equipe"/>
+            </div>
+          <% end %>
           <br />
+          <% end %>
         <% end %>
-      </div>
-      <div class="field">
-        <%= f.label :courses, "Minicursos" %>
-
       </div>
       <div class="field">
 

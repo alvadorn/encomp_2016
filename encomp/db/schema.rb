@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20160828161738) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.date     "day",                     null: false
+    t.integer  "value",                   null: false
+    t.integer  "vacancies"
   end
 
   create_table "courses_users", id: false, force: :cascade do |t|
@@ -53,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160828161738) do
     t.string   "address"
     t.string   "university"
     t.string   "course"
+    t.string   "team_name"
     t.integer  "payment_preference",     default: 0
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
