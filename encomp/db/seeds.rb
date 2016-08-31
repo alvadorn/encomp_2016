@@ -14,11 +14,11 @@ encomp = User.new(name: "Encomp Oficial", email: "contato@encomp.com.br", passwo
 encomp.save
 
 Course.create([
-  {name: "Ruby On Rails", desc: "", day: Date.new(2016, 9, 20), value: 10.0, vacancies: 25},
-  {name: "Git", desc: "", day: Date.new(2016, 9, 20), value: 10.0, vacancies: 25},
-  {name: "Robótica", desc: "", day: Date.new(2016,9,22), value: 20.0, vacancies: 10},
-  {name: "Aprendizado de Máquina", desc: "", day: Date.new(2016,9,22), value: 15.0, vacancies: 25},
-  {name: "Linux", desc: "", day: Date.new(2016,9,22), value: 15.0, vacancies: 25},
+  {name: "Ruby On Rails", desc: "Ministrado por Igor Sant'ana(@alvadorn)", day: Date.new(2016, 9, 20), value: 10.0, vacancies: 25},
+  {name: "Git", desc: "Ministrado por Nikolas Serafini", day: Date.new(2016, 9, 20), value: 10.0, vacancies: 25},
+  {name: "Robótica", desc: "Ministrado por Rodolpho Rodrigo Souza da Silva", day: Date.new(2016,9,22), value: 20.0, vacancies: 10},
+  {name: "Aprendizado de Máquina", desc: "Ministrado por Bruno Smarsaro", day: Date.new(2016,9,22), value: 15.0, vacancies: 25},
+  {name: "Linux", desc: "Ministrado pelo professor Dr. Wilian Hiroshi Hisatugu", day: Date.new(2016,9,22), value: 15.0, vacancies: 25},
   {name: "Torneio de Programação", day: Date.new(2016,9,21), value: 10.0, vacancies: 30},
   {name: "Visita técnica", day: Date.new(2016,9,21), value: 20.0, vacancies: 40}
 
