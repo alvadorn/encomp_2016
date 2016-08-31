@@ -1,3 +1,6 @@
+require_dependency '../../lib/template_renderer'
+require_dependency '../../lib/mailgun'
+
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: :index
 
@@ -21,9 +24,10 @@ class UsersController < ApplicationController
     @user.password = generated_password
     respond_to do |format|
       if @user.save
-        p "no error"
         format.html { redirect_to user_inscription_path, notice: 'Inscrição realizada com sucesso.' }
         format.json { render :show, status: :created, location: @user }
+        html = TemplateRenderer.render("#{Rails.root}/lib/mail_views/inscricao.html.erb", person: @user.as_json(:include => :courses))
+        MailGun.send_mail(@user.email, "Inscrição realizada com sucesso!", html)
       else
         p "error"
         puts @user.errors
