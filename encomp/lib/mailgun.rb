@@ -14,8 +14,7 @@ module MailGun
 
     message_params = {
       :from => FROM,
-      :to => FROM,
-      :bcc => dest,
+      :to => dest,
       :subject => subject,
       :html => html,
       :text => text
@@ -30,4 +29,4 @@ module MailGun
   module_function :send_mail
 end
 
-MailGun.send_mail(["igorba2005@gmail.com", "contato@igorsantana.com"], "nada2", "<html>huehuehue2</html>", "Lol2")
+#MailGun.send_mail(["igorba2005@gmail.com", "contato@igorsantana.com"], "nada2", "<html>huehuehue2</html>", "Lol2")

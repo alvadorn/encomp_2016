@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Inscrição realizada com sucesso!</title>
+  <meta charset=“UTF-8”>
+</head>
+<body>
+  <h1>Inscrição realizada com sucesso!</h1>
+  <p>Olá <%= person["name"] %>, sua inscrição foi realizada com sucesso.</p>
+  <p>Você está inscrito nos seguintes minicursos:</p>
+  <ul>
+    <% person["courses"].each do |k| %>
+      <li><%= k["name"] %></li>
+    <% end %>
+  </ul>
+  <p>O valor total a ser pago é de <%= person["value_to_pay"] %>.</p>
+  <p>Para realizar o pagamento escolha uma das opções abaixo:</p>
+  <ul>
+    <li>Depósito em conta:
+    <p><strong>Caixa Econômica Federal</strong></p>
+      <p>Conta Poupança</p>
+      <p>0556 013 9890-1⁠⁠⁠⁠<p>
+    </li>
+    <li>
+      <p>
+        Procurar alguém da Comissão Financeira:
+      </p>
+      <ul>
+        <li>
+          <p><strong>Guilherme Uliana</strong></p>
+          <p><strong>Horários</strong></p>
+          <p>Segunda: 13:00 às 17:30</p>
+          <p>Terça: 15:00 às 18:00</p>
+          <p>Quinta: 9:00 às 14:00</p>
+          <p>Sexta: 13:00 às 17:30</p>
+        </li>
+        <li>
+          <p><strong>Natália Calmon</strong></p>
+          <p><strong>Horários</strong></p>
+          <p>Segunda: 13:00 às 17:30</p>
+          <p>Terça: 15:00 às 18:00</p>
+          <p>Quinta: 9:00 às 14:00</p>
+          <p>Sexta: 13:00 às 17:30</p>
+        </li>
+        <li>
+          <p><strong>Jean Pablo</strong></p>
+          <p><strong>Horários</strong></p>
+          <p>Segunda: 13:00 às 17:30</p>
+          <p>Terça: 15:00 às 18:00</p>
+          <p>Quinta: 9:00 às 14:00</p>
+          <p>Sexta: 13:00 às 17:30</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>Para quaisquer outros dúvidas ou problemas entrem em contato através do email: contato@encomp.com.br</p>
+</body>
+</html>
