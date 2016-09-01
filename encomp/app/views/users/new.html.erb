@@ -81,7 +81,7 @@
         <% @courses.each do |course| %>
           <% if course.vacancies_left > 0 %>
           <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %> - <strong>Valor</strong>: R$<%= course.value %>,00, <%= course.vacancies_left %> disponíveis
-          <% if course.name == "Torneio de Programação" %>
+          <% if course.name == "Torneio de Programação" %>- 3 membros por equipe.
             <div style="display: none" id="user_team_name">
             <br />
             <%= f.label :team_name, "Nome da equipe" %>
