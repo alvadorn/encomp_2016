@@ -1,5 +1,5 @@
 <div class="container">
-  <% if DateTime.now >= DateTime.new(2016,8,30) %>
+  <% if DateTime.now >= DateTime.new(2016,9,2) %>
     <div class="row">
 
         <h3 class="text-center col-sm-offset-2">INSCRIÇÃO</h2>
@@ -84,6 +84,7 @@
           <% if course.name == "Torneio de Programação" %>- 3 membros por equipe.
             <div style="display: none" id="user_team_name">
             <br />
+            <p style="color: red">Você receberá um formulário mais completo por email posteriormente.</p>
             <%= f.label :team_name, "Nome da equipe" %>
             <br />
             <input type="text" name="user[team_name]" id="user_team_name_value" value="" placeholder="Nome da equipe"/>
