@@ -1,6 +1,7 @@
 $(document).ready(function() {
   changeHidden();
   changeHiddenDeposit();
+  //termsAllowing();
 });
 
 $("#minicourses input[type=checkbox]").click(function() {

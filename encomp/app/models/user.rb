@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable, :timeoutable
 
   validates_presence_of [:name, :cpf, :phone, :university, :course]
+  validates_inclusion_of :terms_agree, :in => [true]
   has_and_belongs_to_many :courses
 
 

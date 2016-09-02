@@ -1,5 +1,5 @@
 <div class="container">
-  <% if DateTime.now >= DateTime.new(2016,9,3, 21, 0, 0, "-03:00") %>
+  <% if DateTime.now >= DateTime.new(2016,9,1, 20, 0, 0, "-03:00") %>
     <div class="row">
 
         <h3 class="text-center col-sm-offset-2">INSCRIÇÃO</h2>
@@ -17,7 +17,7 @@
       </div>
     <% end %>
     <div class="row">
-    <%= form_for @user, html: { class: "col-sm-offset-5 col-sm-7", role: "form" },url: user_create_path do |f|%>
+    <%= form_for @user, html: { id: "form-inscription-data", class: "col-sm-offset-5 col-sm-7", role: "form" },url: user_create_path do |f|%>
 
       <% if @user.errors.count > 0 %>
         <div id="error_explanation" class="form-group">
@@ -28,6 +28,11 @@
           </ul>
         </div>
       <% end %>
+      <div class="row">
+        <div class="col-sm-6">
+          <p style="color: red" class="text-justify"><strong>Somente terão garantia de camisa do tamanho solicitado aqueles que se inscreverem até dia 12/09.</strong></p>
+        </div>
+      </div>
       <p><strong>Valor de inscrição:</strong> R$ 25,00</p>
 
       <div class="form-group">
@@ -80,16 +85,17 @@
         <%= f.label :courses, "Minicursos" %><br />
         <% @courses.each do |course| %>
           <% if course.vacancies_left > 0 %>
-          <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %> - <strong>Valor</strong>: R$<%= course.value %>,00, <%= course.vacancies_left %> disponíveis
-          <% if course.name == "Torneio de Programação" %>- 3 membros por equipe.
-            <div style="display: none" id="user_team_name">
-            <br />
-            <p style="color: red">Você receberá um formulário mais completo por email posteriormente.</p>
-            <%= f.label :team_name, "Nome da equipe" %>
-            <br />
-            <input type="text" name="user[team_name]" id="user_team_name_value" value="" placeholder="Nome da equipe"/>
-            </div>
-          <% end %>
+            <% if course.name == "Torneio de Programação" %>
+              <input id="user_courses_torneio_de_programao" class="course-2016-09-21" type="checkbox" name="user[courses][]" value="Torneio de Programação">
+              Torneio de Programação - <strong>Valor:</strong> R$5,00 por membro da equipe - 3 membros por equipe
+              <div style="display: none" id="user_team_name">
+              <br />
+              <p style="color: red" class="text-justify">A data, horário e local de inscrição no Torneio será enviado por email.</p>
+              </div>
+            <% else %>
+              <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %> - <strong>Valor</strong>: R$<%= course.value %>,00, <%= course.vacancies_left %> disponíveis
+            <% end %>
+
           <br />
           <% end %>
         <% end %>
@@ -109,6 +115,34 @@
         <div id="pay_preference_bank" style="display: none">
           <p style="color: red"><strong>Em caso de depósito em conta, o comprovante deverá ser enviado em até 2 dias.</strong></p>
         </div>
+      </div>
+      <label>Termos e Condições de Participação</label>
+      <div class="form-terms text-justify">
+
+
+        Definição:
+        <p>O presente documento tem por objetivo estabelecer as condições gerais para a política de privacidade do site http://www.encomp.com.br, além de esclarecer assuntos destinados à características notáveis do II Encontro Norte Capixaba de Computação, denominado II ENCOMP, evento este que acontece no campus Centro Universitário Norte do Espírito Santo da Universidade Federal do Espírito Santo.</p>
+        Declaração por parte do II ENCOMP:
+        <p>O II Encomp, tem o prestígio de apresentar na cidade de São Mateus, diversas palestras e minicursos afim de gerar conhecimento científico aos seus participantes. O II Encomp zela a todo momento pelo respeito à CONSTITUIÇÃO DA REPÚBLICA FEDERATIVA DO BRASIL DE 1988.</p>
+        <p>A comunicação de propriedade intelectual executada por palestrantes ou participantes do II Encomp não torna o evento supracitado um mediador, ou conciliador, ou contribuinte de forma secundária para a realização de qualquer ação que esteja vinculada à propriedade intelectual.</p>
+        <p>O II Encomp não possui aceitação ao SPAM, portanto o evento, acima descrito, não possui intenção de promovê-lo. Enfatiza-se a liberdade do participante de enviar para o contato encomp.ufes@gmail.com sob o direito de não receber qualquer tipo de email cuja origem ou autoria seja o II Encomp.</p>
+
+
+        Declaração por parte do participante:
+        <p>AUTORIZO o  uso  de  minha imagem  e  voz em todo e qualquer material entre fotos, documentos e outros meios de comunicação,  para  serem  utilizados na divulgação do II Encontro Norte Capixaba de Computação (II ENCOMP) e suas edições posteriores, evento este que acontece no campus Centro Universitário Norte do Espírito Santo da Universidade Federal do Espírito Santo.</p>
+        <p>A presente autorização é concedida a título gratuito, abrangendo o uso da imagem acima  mencionada  em  todo  território  nacional  e  no  exterior,  em  todas  as  suas modalidades e sem limite de tempo ou número de utilizações.</p>
+        <p>Por  esta  ser  a  expressão  da  minha  vontade  declaro  que  autorizo  o  uso  acima descrito  sem  que  nada  haja  a  ser  reclamado  a  título  de  direitos conexos  à  minha imagem ou a qualquer outro.</p>
+        <p>Declaro ainda para os devidos fins, possuir ciência de que os dados, tais como nome, telefone e email poderão ser disponibilizados para contribuição de pesquisas dentro da universidade que contribua para o melhoramento da vivência dos alunos da Universidade Federal do Espírito Santo e para fins comerciais de seletos patrocinadores, que fazem parte da eleição do II Encomp. Sei bem que a  utilização  das  informações em prejuízo das pessoas não será promovida por este evento supracitado.</p>
+
+        São Mateus-ES, 01 de setembro de 2016.
+      </div>
+
+      <br />
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="user[terms_agree]" value="agree" id="form-agreements"/> Aceito os termos e condições para me inscrever.
+        </label>
       </div>
 
       <div class="actions">

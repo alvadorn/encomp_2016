@@ -17,6 +17,14 @@ form div.form-group input[type=text],input[type=email],input[type=tel] {
   width: 30rem;
 }
 
+.form-terms {
+  font: Arial;
+  border: 1px solid #e5e5e5;
+  height: 200px;
+  overflow: auto;
+  padding: 10px;
+}
+
 #error_explanation {
   width: 95%;
   max-width: 33em;
@@ -43,7 +51,7 @@ form div.form-group input[type=text],input[type=email],input[type=tel] {
   }
 
 .success-msg {
- color: green;   
+ color: green;
 }
 
 .imgs-sobre {

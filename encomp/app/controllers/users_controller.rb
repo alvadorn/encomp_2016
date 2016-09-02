@@ -18,7 +18,8 @@ class UsersController < ApplicationController
 
   def create
     user = user_params
-    user[:courses].map! { |name| Course.find_by(name: name) }
+
+    user[:courses].map! { |name| Course.find_by(name: name) } if user[:courses] != nil
 
     @user = User.new(user)
     generated_password = Devise.friendly_token.first(8)
@@ -34,9 +35,8 @@ class UsersController < ApplicationController
         html = TemplateRenderer.render("#{Rails.root}/lib/mail_views/inscricao.html.erb", person: person)
         MailGun.send_mail(@user.email, "Inscrição realizada com sucesso!", html)
       else
-        p "error"
-        puts @user.errors
         @courses = Course.all.order(:day)
+        courses_map
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
@@ -53,7 +53,7 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :accomodation, :cpf, :shirt,
-     :address, :university, :course, :payment_preference, :phone, :team_name, :courses => [])
+     :address, :university, :course, :payment_preference, :phone, :team_name, :terms_agree, :courses => [])
   end
 
   def courses_map
