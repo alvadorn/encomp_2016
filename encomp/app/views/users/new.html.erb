@@ -87,18 +87,26 @@
           <% if course.vacancies_left > 0 %>
             <% if course.name == "Torneio de Programação" %>
               <input id="user_courses_torneio_de_programao" class="course-2016-09-21" type="checkbox" name="user[courses][]" value="Torneio de Programação">
-              Torneio de Programação - <strong>Valor:</strong> R$5,00 por membro da equipe - 3 membros por equipe, <%= course.vacancies_left %> vagas disponíveis
+              Torneio de Programação - <strong>Valor:</strong> R$20,00 por equipe - 3 membros por equipe
               <div style="display: none" id="user_team_name">
               <br />
-              <p style="color: red" class="text-justify">A data, horário e local de inscrição no Torneio será enviado por email.</p>
+              <p style="color: red" class="text-justify">Confirmo interesse em participar da maratona!</p>
+              <!-- A data, horário e local de inscrição no Torneio será enviado por email. -->
               </div>
             <% else %>
               <% if course.name == "Visita técnica" %>
-                <p data-toggle="tooltip" title="Rede de distribuição da Internet no ES(PoP-ES) e visitação aos laboratórios da UFES de Goiabeiras">
+                <a style="color: black" data-toggle="tooltip" title="Rede de distribuição da Internet no ES(PoP-ES) e visitação aos laboratórios da UFES de Goiabeiras">
               <% end %>
-              <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %> - <strong>Valor</strong>: R$<%= course.value %>,00, <%= course.vacancies_left %> vagas disponíveis
+              <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %> - <strong>Valor</strong>: R$<%= course.value %>,00
               <% if course.name == "Visita técnica" %>
                 </a>
+                <div style="display: none" id="visita-tecnica-form">
+                  <br />
+                  <p style="color: red" class="text-justify">No momento a visita técnica é uma reserva de vagas. Caso seja disponibilidade, você será contatado por email. O pagamento da visita será realizado de maneira separada.</p>
+                </div>
+              <% end %>
+              <% if course.name != "Visita técnica" %>
+                - <%= course.vacancies_left %> vagas disponíveis
               <% end %>
             <% end %>
 
@@ -127,7 +135,7 @@
 
 
         <strong>Definição:</strong>
-        <p>O presente documento tem por objetivo estabelecer as condições gerais para a política de privacidade do sitehttp://www.encomp.com.br, além de esclarecer assuntos destinados à características notáveis do II Encontro Norte Capixaba de Computação, denominado II ENCOMP, evento este que acontece no campus Centro Universitário Norte do Espírito Santo da Universidade Federal do Espírito Santo.</p>
+        <p>O presente documento tem por objetivo estabelecer as condições gerais para a política de privacidade do site http://www.encomp.com.br, além de esclarecer assuntos destinados à características notáveis do II Encontro Norte Capixaba de Computação, denominado II ENCOMP, evento este que acontece no campus Centro Universitário Norte do Espírito Santo da Universidade Federal do Espírito Santo.</p>
         Declaração por parte do II ENCOMP:
         <p>O II Encomp, tem o prestígio de apresentar na cidade de São Mateus, diversas palestras e minicursos afim de gerar conhecimento científico aos seus participantes. O II Encomp zela a todo momento pelo respeito à CONSTITUIÇÃO DA REPÚBLICA FEDERATIVA DO BRASIL DE 1988.</p>
         <p>A comunicação de propriedade intelectual executada por palestrantes ou participantes do II Encomp não torna o evento supracitado um mediador, ou conciliador, ou contribuinte de forma secundária para a realização de qualquer ação que esteja vinculada à propriedade intelectual.</p>
