@@ -1,7 +1,7 @@
 $(document).ready(function() {
   changeHidden();
   changeHiddenDeposit();
-  //termsAllowing();
+  $('[data-toggle="tooltip"]').tooltip(); 
 });
 
 $("#minicourses input[type=checkbox]").click(function() {

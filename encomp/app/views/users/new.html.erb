@@ -93,7 +93,13 @@
               <p style="color: red" class="text-justify">A data, horário e local de inscrição no Torneio será enviado por email.</p>
               </div>
             <% else %>
+              <% if course.name == "Visita técnica" %>
+                <p data-toggle="tooltip" title="Rede de distribuição da Internet no ES(PoP-ES) e visitação aos laboratórios da UFES de Goiabeiras">
+              <% end %>
               <%= f.check_box(:courses, {:multiple => true, class: "course-" + course.day.to_s  }, course.name, nil) %> <%= course.name %> - <strong>Valor</strong>: R$<%= course.value %>,00, <%= course.vacancies_left %> vagas disponíveis
+              <% if course.name == "Visita técnica" %>
+                </a>
+              <% end %>
             <% end %>
 
           <br />
@@ -120,15 +126,15 @@
       <div class="form-terms text-justify">
 
 
-        Definição:
-        <p>O presente documento tem por objetivo estabelecer as condições gerais para a política de privacidade do site http://www.encomp.com.br, além de esclarecer assuntos destinados à características notáveis do II Encontro Norte Capixaba de Computação, denominado II ENCOMP, evento este que acontece no campus Centro Universitário Norte do Espírito Santo da Universidade Federal do Espírito Santo.</p>
+        <strong>Definição:</strong>
+        <p>O presente documento tem por objetivo estabelecer as condições gerais para a política de privacidade do sitehttp://www.encomp.com.br, além de esclarecer assuntos destinados à características notáveis do II Encontro Norte Capixaba de Computação, denominado II ENCOMP, evento este que acontece no campus Centro Universitário Norte do Espírito Santo da Universidade Federal do Espírito Santo.</p>
         Declaração por parte do II ENCOMP:
         <p>O II Encomp, tem o prestígio de apresentar na cidade de São Mateus, diversas palestras e minicursos afim de gerar conhecimento científico aos seus participantes. O II Encomp zela a todo momento pelo respeito à CONSTITUIÇÃO DA REPÚBLICA FEDERATIVA DO BRASIL DE 1988.</p>
         <p>A comunicação de propriedade intelectual executada por palestrantes ou participantes do II Encomp não torna o evento supracitado um mediador, ou conciliador, ou contribuinte de forma secundária para a realização de qualquer ação que esteja vinculada à propriedade intelectual.</p>
         <p>O II Encomp não possui aceitação ao SPAM, portanto o evento, acima descrito, não possui intenção de promovê-lo. Enfatiza-se a liberdade do participante de enviar para o contato encomp.ufes@gmail.com sob o direito de não receber qualquer tipo de email cuja origem ou autoria seja o II Encomp.</p>
 
 
-        Declaração por parte do participante:
+        <strong>Declaração por parte do participante:</strong>
         <p>AUTORIZO o  uso  de  minha imagem  e  voz em todo e qualquer material entre fotos, documentos e outros meios de comunicação,  para  serem  utilizados na divulgação do II Encontro Norte Capixaba de Computação (II ENCOMP) e suas edições posteriores, evento este que acontece no campus Centro Universitário Norte do Espírito Santo da Universidade Federal do Espírito Santo.</p>
         <p>A presente autorização é concedida a título gratuito, abrangendo o uso da imagem acima  mencionada  em  todo  território  nacional  e  no  exterior,  em  todas  as  suas modalidades e sem limite de tempo ou número de utilizações.</p>
         <p>Por  esta  ser  a  expressão  da  minha  vontade  declaro  que  autorizo  o  uso  acima descrito  sem  que  nada  haja  a  ser  reclamado  a  título  de  direitos conexos  à  minha imagem ou a qualquer outro.</p>
