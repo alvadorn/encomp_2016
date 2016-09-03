@@ -1,8 +1,30 @@
-<!-- Page Heading -->
-<div class="row">
-  <div class="col-lg-12">
-    <h1 class="page-header">
-      Usuários <small>Lista</small>
-    </h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Atualmente temos <%= @inscripted_count %> inscritos, dos quais <%= @inscripted_paid %> já pagaram.</p>
+    </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Inscritos em cada minicurso: </p>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Minicurso</th>
+        <th>Total de Inscritos</th>
+        <th>Total de Inscritos Confirmados</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @courses.each do |k| %>
+        <tr>
+          <td><%= k.name %></td>
+          <td><%= k.users.count %></td>
+          <td><%= k.users.where("paid = true").count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
