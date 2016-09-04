@@ -53,6 +53,12 @@ gem 'faraday', '~> 0.9.2'
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 
+# font awesome
+gem 'font-awesome-rails'
+
+# will paginate
+gem 'will_paginate', '~> 3.1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

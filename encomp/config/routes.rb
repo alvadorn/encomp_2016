@@ -18,6 +18,10 @@ Rails.application.routes.draw do
       root to: "home#admin_index", as: "admin_index"
     end
     root to: redirect("/admin/sign_in")
-    resources :users, only: [ :index, :delete, :update ]
+
+    scope "/inscritos" do
+      get "/", to: "users#index", as: "user_list"
+    end
+
   end
 end

@@ -1,5 +1,4 @@
 class AdminController < ApplicationController
-
   protected
   def permission!
     unless (current_user.admin? || current_user.auxiliar?)

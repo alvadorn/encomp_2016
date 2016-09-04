@@ -1,19 +1,22 @@
 require_dependency '../../lib/template_renderer'
 require_dependency '../../lib/mailgun'
 
-class UsersController < ApplicationController
-  before_action :authenticate_user!, only: :index
+class UsersController < AdminController
+  before_action :authenticate_user!, except: [:new, :create]
+  before_action :permission!, except: [:new, :create]
 
   layout "admin", except: [ :new, :create ]
 
   def index
     @user = current_user
+    @subscribers = User.where("admin = false and auxiliar = false").paginate(:page => params[:page], :per_page => 15)
   end
 
   def new
     @user = User.new
     @courses = Course.all.order(:day)
     courses_map
+    render layout: "application"
   end
 
   def create
@@ -37,7 +40,7 @@ class UsersController < ApplicationController
       else
         @courses = Course.all.order(:day)
         courses_map
-        format.html { render :new }
+        format.html { render :new, layout: "application" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

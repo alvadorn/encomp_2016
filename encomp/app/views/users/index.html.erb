@@ -1,7 +1,12 @@
 <div class="row">
-  <div class="col-lg-12">
-    <h1 class="page-header">
-      Usuários <small>Lista</small>
-    </h1>
-  </div>
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Inscritos
+        </h1>
+    </div>
 </div>
+<% @subscribers.each do |sub| %>
+  <%= sub.name %> -  <%= sub.email %> - <%= sub.id %>
+  <br />
+<% end %>
+<%= will_paginate @subscribers %>

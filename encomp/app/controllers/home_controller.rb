@@ -10,7 +10,7 @@ class HomeController < AdminController
     #@user = current_user
     @inscripted_paid = User.where("admin = false and paid = true").count
     @inscripted_count = User.where("admin = false and paid = false").count
-    @courses = Course.select(:name).all
+    @courses = Course.all
     render layout: "admin"
   end
 
@@ -18,5 +18,6 @@ class HomeController < AdminController
   def set_user
     @user = current_user
   end
+
 
 end

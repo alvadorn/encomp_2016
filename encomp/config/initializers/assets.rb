@@ -3,8 +3,10 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 
+Rails.application.config.assets.precompile += %w( admin.scss admin.js login.scss)
+
 Rails.application.config.assets.paths << Rails.root.join("vendor","assets","components")
-#Rails.application.config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
+Rails.application.config.assets.precompile << %r(bootstrap-sass/assets/fonts/bootstrap/[\w-]+\.(?:eot|svg|ttf|woff2?)$)
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 
