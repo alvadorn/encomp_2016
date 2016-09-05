@@ -58,6 +58,7 @@ class UsersController < AdminController
   def payment
     user = User.find(params[:id])
     user.paid = true
+    user.terms_agree = true if user.terms_agree.nil?
     if user.save
       person = user.as_json(:include => :courses)
       html = TemplateRenderer.render("#{Rails.root}/lib/mail_views/confirmacao.html.erb", person: person)

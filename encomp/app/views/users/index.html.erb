@@ -15,7 +15,5 @@
     <%= text_field_tag :search, params[:search], placeholder: "Entre com um nome para busca" %>
     <%= submit_tag "Procurar", :name => nil %>
   </p>
-  <% cache do %>
   <div id="subscribers"><%= render 'subscribers' %></div>
-  <% end %>
 <% end %>

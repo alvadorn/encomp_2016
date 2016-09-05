@@ -10,6 +10,7 @@
   </thead>
   <tbody>
     <% @subscribers.each do |sub| %>
+    <% cache sub do %>
       <tr>
         <td><%= sub.name %></td>
         <td><%= sub.email %></td>
@@ -23,6 +24,7 @@
         <td><a data-toggle="modal" href="#subscriber_details<%= sub.id %>">Ver detalhes</a></td>
         <%= render partial: "details", locals: { subscriber: sub } %>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
