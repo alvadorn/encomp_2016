@@ -25,5 +25,10 @@ Rails.application.routes.draw do
       patch "/pagamento/:id", to: "users#payment", as: "user_payment_confirm"
     end
 
+    scope "/mail" do
+      get "/", to: "mail#index", as: "mail_index"
+      post "/enviar", to: "mail#send", as: "mail_sender"
+    end
+
   end
 end
