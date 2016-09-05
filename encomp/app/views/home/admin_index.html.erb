@@ -7,6 +7,7 @@
     <p><strong>Atualmente temos <%= @inscripted_count %> inscritos, dos quais <%= @inscripted_paid %> já pagaram.</p></strong>
   </div>
 </div>
+<hr />
 <div id="quantityAccomodation">
   <p><strong>Acomodação requisitada:</strong></p>
   <p>Não necessário: <%= @no_accomodation %></p>
@@ -14,6 +15,27 @@
   <p>Feminino: <%= @female %></p>
   <p>Misto: <%= @mixed %></p>
 </div>
+<hr />
+<div id="paymentPreference">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>
+        <strong>Preferência de pagamento:</strong>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <p><strong>Depósito ou transferência: </strong> <%= @opt1 %> inscritos</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <p><strong>Pagamento com a comissão financeira:</strong> <%= @opt2 %> inscritos</p>
+    </div>
+  </div>
+</div>
+<hr />
 <div class="row">
   <div class="col-sm-12">
     <p><strong>Inscritos em cada minicurso: </strong></p>

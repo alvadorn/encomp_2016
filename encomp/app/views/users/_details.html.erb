@@ -18,6 +18,13 @@
         <% end %>
         </ul>
         <br />
+        <strong>Opção de Pagamento: </strong>
+          <% if subscriber.payment_preference == 2 %>
+            Pagamento direto a comissão financeira
+          <% else %>
+            Depósito ou transferência
+          <% end %>
+        <br />
         <% end %>
         <strong>Valor total de inscrição:</strong> R$<%= value %>,00
         <br />
