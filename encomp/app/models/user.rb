@@ -25,6 +25,14 @@ class User < ApplicationRecord
     self.removed
   end
 
+  def self.search(params)
+    if params
+      where("LOWER(name) LIKE ? ", "%#{params}%")
+    else
+      where("")
+    end
+  end
+
   rails_admin do
     list do
       field(:name) { label "Nome" }

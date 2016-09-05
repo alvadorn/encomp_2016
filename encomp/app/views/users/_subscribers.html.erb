@@ -1,0 +1,30 @@
+<div class="no-more-tables">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Pagamento</th>
+      <th>Detalhes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @subscribers.each do |sub| %>
+      <tr>
+        <td><%= sub.name %></td>
+        <td><%= sub.email %></td>
+        <td>
+          <% if sub.paid %>
+            Confirmado
+          <% else %>
+            <%= link_to "Confirmar pagamento", user_payment_confirm_url(sub.id), :method => :patch, data: { confirm: "Voce deseja realmente confirmar o pagamento desse inscrito?" }%>
+          <% end %>
+        </td>
+        <td><a data-toggle="modal" href="#subscriber_details<%= sub.id %>">Ver detalhes</a></td>
+        <%= render partial: "details", locals: { subscriber: sub } %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+<%= will_paginate @subscribers %>

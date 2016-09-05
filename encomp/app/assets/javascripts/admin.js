@@ -13,3 +13,10 @@ $(look).on('click', function (e) {
     //$('.tab-content > div').not(target).hide();
     $(target).fadeIn(600);
 });
+
+$(function() {
+  $("#subscribers_search input").keyup(function() {
+    $.post($("#subscribers_search").attr("action"), $("#subscribers_search").serialize(), null, "script");
+    return false;
+  });
+});

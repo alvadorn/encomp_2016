@@ -8,8 +8,10 @@ class UsersController < AdminController
   layout "admin", except: [ :new, :create ]
 
   def index
+    search = params[:search] || nil
+    search.downcase! if search.class == String
     @user = current_user
-    @subscribers = User.where("admin = false and auxiliar = false").paginate(:page => params[:page], :per_page => 15)
+    @subscribers = User.where("admin = false and auxiliar = false").search(search).paginate(:page => params[:page], :per_page => 15).order("id DESC").includes(:courses)
   end
 
   def new
@@ -51,6 +53,18 @@ class UsersController < AdminController
 
   def update
 
+  end
+
+  def payment
+    user = User.find(params[:id])
+    user.paid = true
+    if user.save
+      person = user.as_json(:include => :courses)
+      html = TemplateRenderer.render("#{Rails.root}/lib/mail_views/confirmacao.html.erb", person: person)
+      MailGun.send_mail(user.email, "Inscrição confirmada com sucesso!", html)
+
+      redirect_to user_list_path, notice: "Pagamento da inscrição de #{user.name} confirmado."
+    end
   end
 
   private

@@ -5,8 +5,17 @@
         </h1>
     </div>
 </div>
-<% @subscribers.each do |sub| %>
-  <%= sub.name %> -  <%= sub.email %> - <%= sub.id %>
-  <br />
+<% if notice %>
+<div id="notice">
+  <%= notice %>
+</div>
 <% end %>
-<%= will_paginate @subscribers %>
+<%= form_for user_list_search_path, html: { id: "subscribers_search" }, remote: true do %>
+  <p>
+    <%= text_field_tag :search, params[:search], placeholder: "Entre com um nome para busca" %>
+    <%= submit_tag "Procurar", :name => nil %>
+  </p>
+  <% cache do %>
+  <div id="subscribers"><%= render 'subscribers' %></div>
+  <% end %>
+<% end %>

@@ -21,6 +21,8 @@ Rails.application.routes.draw do
 
     scope "/inscritos" do
       get "/", to: "users#index", as: "user_list"
+      post "/", to: "users#index", as: "user_list_search"
+      patch "/pagamento/:id", to: "users#payment", as: "user_payment_confirm"
     end
 
   end

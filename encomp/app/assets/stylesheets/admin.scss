@@ -11,6 +11,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+#quantityAccomodation {
+  color: green;
+}
+#notice {
+  color: green;
+  font-weight: bold;
+}
+
+form#subscribers_search p input#search {
+  width: 230px;
+}
 
 body {
     margin-top: 100px;

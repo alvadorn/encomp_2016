@@ -1,0 +1,30 @@
+<div class="modal fade" id="subscriber_details<%= subscriber.id %>" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">Detalhes de <%= subscriber.name %></div>
+      <div class="modal-body">
+        <% value = 25 %>
+        <strong>Camisa:</strong> <%= subscriber.shirt %><br />
+        <strong>Acomodação:</strong> <%= subscriber.accomodation %> <br />
+        <strong>Universidade:</strong> <%= subscriber.university %> <br/>
+        <strong>Curso:</strong> <%= subscriber.course %> <br />
+        <strong>Telefone:</strong> <%= subscriber.phone %> <br />
+        <% if subscriber.courses.count > 0 %>
+        <strong>Minicursos escolhidos:</strong>
+        <ul>
+        <% subscriber.courses.each do |course| %>
+          <li><%= course.name %> - Valor: R$<%= course.value %>,00</li>
+          <% value = value + course.value %>
+        <% end %>
+        </ul>
+        <br />
+        <% end %>
+        <strong>Valor total de inscrição:</strong> R$<%= value %>,00
+        <br />
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

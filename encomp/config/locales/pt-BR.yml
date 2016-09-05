@@ -1,4 +1,8 @@
 pt-BR:
+  devise:
+    sessions:
+      user:
+        signed_in: "Usuário logado com sucesso!"
   activerecord:
     models:
       lecture: Palestra
