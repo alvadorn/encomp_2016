@@ -9,7 +9,7 @@ class HomeController < AdminController
   def admin_index
     #@user = current_user
     @inscripted_paid = User.where("admin = false and paid = true").count
-    @inscripted_count = User.where("admin = false and paid = false").count
+    @inscripted_count = User.where("admin = false and auxiliar = false").count
     @courses = Course.all
     @no_accomodation = User.where("accomodation = 'Não necessário'").count
     @male = User.where("accomodation = 'Masculino'").count
