@@ -13,7 +13,9 @@
         <strong>Minicursos escolhidos:</strong>
         <ul>
         <% subscriber.courses.each do |course| %>
+          <% cache course do %>
           <li><%= course.name %> - Valor: R$<%= course.value %>,00</li>
+          <% end %>
           <% value = value + course.value %>
         <% end %>
         </ul>
