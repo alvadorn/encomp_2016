@@ -1,22 +1,23 @@
 require_dependency '../../lib/template_renderer'
 require_dependency '../../lib/mailgun'
 
-class MailController < AdminController
+class MailerController < AdminController
   before_action :authenticate_user!
   before_action :permission!
-  layout :admin
+  before_action :set_user
+
+  layout "admin"
 
   # GET /
   def index
-    layout render: "admin"
-  end
 
-  # POST /enviar
-  def send(what)
-    puts what
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def query_email
     query = "(admin = false and auxiliar = false)"

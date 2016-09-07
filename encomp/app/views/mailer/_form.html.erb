@@ -1,0 +1,12 @@
+<%= form_tag mail_sender_url, method: :post do %>
+  <div class="email-options">
+    <p>Para quem enviar:</p>
+    <input type="checkbox" name="everyone" /> Todos
+    <p>Status do pagamento: </p>
+    <input type="checkbox" name="paid" /> Pagamento confirmado
+    <input type="checkbox" name="not_paid" /> Pagamento não confirmado
+  </div>
+  <%= text_area_tag "email_body", nil %>
+  <br />
+  <%= submit_tag "Enviar email" %>
+<% end %>

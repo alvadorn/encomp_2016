@@ -11,6 +11,42 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@media(max-width: 768px) {
+  div {
+    .email-fill {
+      textarea {
+        resize: none;
+        width: 34rem;
+        height: 40rem;
+      }
+    }
+  }
+}
+
+
+@media(min-width: 768px) {
+
+  div {
+    .email-fill {
+      textarea {
+        resize: none;
+        width: 768px;
+        height: 40rem;
+      };
+      form {
+        p {
+          padding-bottom: 0px;
+          padding-top: 10px;
+        };
+        span {
+          padding-top: 0px;
+        }
+      }
+    }
+  }
+
+}
+
 #quantityAccomodation {
   color: green;
 }
