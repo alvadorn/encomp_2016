@@ -26,8 +26,8 @@ Rails.application.routes.draw do
     end
 
     scope "/mail" do
-      get "/", to: "mailer#index"
-      post "/enviar", to: "mailer#send", as: "mail_sender"
+      get "/", to: "mailer#index", as: "mail_index"
+      post "/enviar", to: "mailer#send_mail", as: "mail_sender"
     end
 
   end

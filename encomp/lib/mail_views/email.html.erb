@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title><%= body[:title] %></title>
+  <meta charset=“UTF-8”>
+  <style type="text/css">
+    .email {
+      text-indent: 1.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p>Este email foi enviado pela equipe do II Encomp para você!</p>
+  </div>
+  <div class="email">
+    <%= body[:body] %>
+  </div>
+  <p>Para quaisquer dúvidas ou problemas entrem em contato através do email: contato@encomp.com.br</p>
+</body>
+</html>

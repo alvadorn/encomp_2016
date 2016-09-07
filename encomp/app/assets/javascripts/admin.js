@@ -2,6 +2,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require_tree ./admin
 
 var look = "ul.nav.navbar-nav.side-nav li a";
 $(look).on('click', function (e) {

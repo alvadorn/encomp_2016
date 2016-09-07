@@ -1,12 +1,17 @@
 <%= form_tag mail_sender_url, method: :post do %>
-  <div class="email-options">
-    <p>Para quem enviar:</p>
-    <input type="checkbox" name="everyone" /> Todos
+  <div id="email-options">
+    <h3>Para quais inscritos enviar email:</h2>
     <p>Status do pagamento: </p>
-    <input type="checkbox" name="paid" /> Pagamento confirmado
-    <input type="checkbox" name="not_paid" /> Pagamento não confirmado
+    <div class="opts" data-toggle="tooltip" title="Caso você não selecione nenhum dos dois será enviado para todos os inscritos">
+      <input type="checkbox" name="paid" id="email-opt-paid" class="email-option" checked/> Pagamento confirmado <br />
+      <input type="checkbox" name="not_paid" id="email-opt-not_paid" class="email-option" checked/> Pagamento não confirmado
+    </div>
   </div>
-  <%= text_area_tag "email_body", nil %>
+  <p>Título:</p>
+  <%= text_field_tag "email_title", nil, placeholder: "Título do email", class: "email-title" %>
   <br />
-  <%= submit_tag "Enviar email" %>
+  <p>Corpo do Email:</p>
+  <%= text_area_tag "email_body", nil, placeholder: "Corpo do email" %>
+  <br />
+  <%= submit_tag "Enviar email", data: { confirm: "Você tem certeza que quer enviar este email?" } %>
 <% end %>
