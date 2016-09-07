@@ -33,18 +33,20 @@
         <li> <a href="<%= root_path %>"> <span class="glyphicon glyphicon-chevron-right"></span>&nbsp; HOME</a></li>
         <li><a href="<%= root_path %>#sobre"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; SOBRE</a></li>
         <li><a href="<%= root_path %>#minicursos"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MINICURSOS</a></li>
-        <li><a href="<%= root_path %>#palestras"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PALESTRAS</a></li>
+        <li><a href="<%= root_path %>#palestras"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PROGRAMAÇÃO</a></li>
         <li><a href="<%= user_inscription_path %>"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; INSCRIÇÕES</a></li>
         <li><a href="<%= root_path %>#mapa"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MAPA</a></li>
+        <li><a href="<%= root_path %>#patrocinadores"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PATROCINADORES</a></li>
       </ul>
       <% else %>
       <ul>
         <li> <a href="<%= root_path %>#inicio"> <span class="glyphicon glyphicon-chevron-right"></span>&nbsp; HOME</a></li>
         <li><a href="<%= root_path %>#sobre"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; SOBRE</a></li>
         <li><a href="<%= root_path %>#minicursos"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MINICURSOS</a></li>
-        <li><a href="<%= root_path %>#palestras"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PALESTRAS</a></li>
+        <li><a href="<%= root_path %>#palestras"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PROGRAMAÇÃO</a></li>
         <li><a href="<%= user_inscription_path %>"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; INSCRIÇÕES</a></li>
         <li><a href="<%= root_path %>#mapa"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; MAPA</a></li>
+        <li><a href="<%= root_path %>#patrocinadores"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; PATROCINADORES</a></li>
       </ul>
       <% end %>
 
@@ -74,6 +76,7 @@
             <li class="col-xs-2"><a href="<%= root_path %>#palestras">PALESTRAS</a></li>
             <li class="col-xs-2"><a href="<%= user_inscription_path %>">INSCRIÇÕES</a></li>
             <li class="col-xs-2"><a href="<%= root_path %>#mapa">MAPA</a></li>
+            <!-- <li class="col-xs-2"><a href="<%= root_path %>#patrocinadores">PATROCINADORES</a></li> -->
         </ul>
 
       </div>
@@ -93,9 +96,8 @@
 
   <br>
   <br>
-  <br>
-  <br>
 
+  <%= render partial: "layouts/patreon" %>
   <hr>
 
   <div>
