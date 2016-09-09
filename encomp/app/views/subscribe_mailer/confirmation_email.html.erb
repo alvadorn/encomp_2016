@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>Confirmação de pagamento de inscrição!</title>
+  <meta charset=“UTF-8”>
+</head>
+<body>
+  <h1>Confirmação de pagamento de inscrição!</h1>
+  <p>Olá <%= @user.name %>, sua inscrição foi confirmada com sucesso.</p>
+  <% if @user.courses.count > 0 %>
+  <p>Você está inscrito nos seguintes minicursos:</p>
+  <ul>
+    <% @user.courses.each do |k| %>
+      <li><%= k.name %></li>
+    <% end %>
+  </ul>
+  <% end %>
+  <p>Esperamos você no Encomp nos dias 20, 21, 22, 23 de setembro. Aproveite!</p>
+
+  <p>Para quaisquer dúvidas ou problemas entrem em contato através do email: contato@encomp.com.br</p>
+</body>
+</html>

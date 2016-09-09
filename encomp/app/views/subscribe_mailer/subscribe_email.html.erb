@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Inscrição realizada com sucesso!</title>
+  <meta charset=“UTF-8”>
+</head>
+<body>
+  <h1>Inscrição realizada com sucesso!</h1>
+  <p>Olá <%= @user.name%>, sua inscrição foi realizada com sucesso.</p>
+  <p>Você está inscrito nos seguintes minicursos:</p>
+  <ul>
+    <% @user.courses.each do |course| %>
+      <li><%= course.name %></li>
+    <% end %>
+  </ul>
+    <p>O valor total de inscrição é de R$<%= @user.value_to_pay %>,00.</p>
+    <p>Aos que escolheram a visita técnica: A visita será confirmada assim que a UFES confirmar o ônibus. Logo mais entraremos em contato para informar se o ônibus foi liberado ou não. Se liberado, terão dois dias para pagar o valor da visita técnica após o email de comunicação.</p>
+  <p>Para realizar o pagamento escolha uma das opções abaixo:</p>
+  <ul>
+    <li>Depósito em conta:
+    <p><strong>Caixa Econômica Federal</strong></p>
+      <p>Conta Poupança</p>
+      <p>0556 013 9890-1⁠⁠⁠⁠<p>
+
+      <br />
+      <p>Aqueles que optarem pelo pagamento através de depósito devem realizar o pagamento em até 2 dias e enviar o comprovante para o email contato@encomp.com.br</p>
+    </li>
+    <li>
+      <p>
+        Procurar alguém da Comissão Financeira:
+      </p>
+      <ul>
+        <li>
+          <p><strong>Guilherme Uliana</strong></p>
+          <p>O Guilherme se encontrará no LPD-DCEL(Laboratório de Práticas Digitais) nos horários abaixos:</p>
+          <p><strong>Horários:</strong></p>
+          <p>Segunda: 13:00 às 17:30</p>
+          <p>Terça: 15:00 às 18:00</p>
+          <p>Quinta: 9:00 às 14:00</p>
+          <p>Sexta: 13:00 às 17:30</p>
+        </li>
+        <li>
+          <p><strong>Natália Calmon</strong></p>
+          <p>A Natália estará na UFES nos horários abaixo, para encontrá-la ligue: (27) 99925-8540</p>
+          <p><strong>Horários:</strong></p>
+          <p>Segunda: 7:00 às 12:20</p>
+          <p>Terça: 7:00 às 16:20</p>
+          <p>Quarta: 7:00 às 14:40</p>
+          <p>Quinta: 10:40 às 14:40</p>
+          <p>Sexta: 10:40 as 18:00</p>
+        </li>
+        <li>
+          <p><strong>Jean Pablo</strong></p>
+          <p>Ou ligue para o Jean: (27) 99239-8192</p>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <p>Para quaisquer dúvidas ou problemas entrem em contato através do email: contato@encomp.com.br</p>
+</body>
+</html>

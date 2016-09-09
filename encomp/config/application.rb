@@ -11,5 +11,12 @@ module Encomp
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.active_job.queue_adapter = :queue_classic
+
+    #config.after_initialize do
+    #  worker = QC::Worker.new
+    #  require 'rake'
+    #  Rake::Task["qc:work"].invoke
+    #end
   end
 end

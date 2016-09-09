@@ -122,6 +122,8 @@ GEM
     puma (3.6.0)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
+    queue_classic (3.1.0)
+      pg (>= 0.17, < 0.19)
     rack (2.0.1)
     rack-pjax (1.0.0)
       nokogiri (~> 1.5)
@@ -230,6 +232,7 @@ DEPENDENCIES
   pg
   puma (~> 3.0)
   pundit
+  queue_classic (~> 3.1.0)
   rails (~> 5.0.0)
   rails-i18n (~> 5.0.0)
   rails_admin (>= 1.0.0.rc)
