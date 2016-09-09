@@ -1,6 +1,3 @@
-require_dependency '../../lib/template_renderer'
-require_dependency '../../lib/mailgun'
-
 class UsersController < AdminController
   before_action :authenticate_user!, except: [:new, :create]
   before_action :permission!, except: [:new, :create]
@@ -31,14 +28,10 @@ class UsersController < AdminController
     @user.password = generated_password
     respond_to do |format|
       if @user.save
+        SubscribeMailer.subscribe_email(@user).deliver_later
         format.html { redirect_to user_inscription_path, notice: 'Inscrição realizada com sucesso.' }
         format.json { render :show, status: :created, location: @user }
-        value_to_pay = 25
-        @user.courses.each { |k| value_to_pay += k.value }
-        person = @user.as_json(:include => :courses)
-        person["value_to_pay"] = value_to_pay
-        html = TemplateRenderer.render("#{Rails.root}/lib/mail_views/inscricao.html.erb", person: person)
-        MailGun.send_mail(@user.email, "Inscrição realizada com sucesso!", html)
+
       else
         @courses = Course.all.order(:day)
         courses_map
@@ -60,9 +53,7 @@ class UsersController < AdminController
     user.paid = true
     user.terms_agree = true if user.terms_agree.nil?
     if user.save
-      person = user.as_json(:include => :courses)
-      html = TemplateRenderer.render("#{Rails.root}/lib/mail_views/confirmacao.html.erb", person: person)
-      MailGun.send_mail(user.email, "Inscrição confirmada com sucesso!", html)
+      SubscribeMailer.confirmation_email(user).deliver_later
 
       redirect_to user_list_path, notice: "Pagamento da inscrição de #{user.name} confirmado."
     end

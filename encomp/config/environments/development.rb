@@ -1,4 +1,15 @@
 Rails.application.configure do
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'email-smtp.us-west-2.amazonaws.com',
+    port:                 465,
+    domain:               'encomp.com.br',
+    user_name:            'AKIAIQUYZHQ5KDOQ3GTA',
+    password:             'AiPA/KCT9nbmdIBRbu7d6HChYhVmaZhsb3qCQjdwyJqL',
+    authentication:       'plain',
+    ssl:                  true
+  }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Default Locale
@@ -33,7 +44,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 

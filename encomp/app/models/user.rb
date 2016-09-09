@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates_inclusion_of :terms_agree, :in => [true]
   has_and_belongs_to_many :courses
 
-
   def is_admin?
     self.admin
   end
@@ -23,6 +22,10 @@ class User < ApplicationRecord
 
   def exists?
     self.removed
+  end
+
+  def value_to_pay
+    value = 25 + self.courses.sum(:value)
   end
 
   def self.search(params)

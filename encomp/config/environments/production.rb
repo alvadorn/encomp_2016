@@ -1,6 +1,17 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'email-smtp.us-west-2.amazonaws.com',
+    port:                 465,
+    domain:               'encomp.com.br',
+    user_name:            'AKIAIQUYZHQ5KDOQ3GTA',
+    password:             'AiPA/KCT9nbmdIBRbu7d6HChYhVmaZhsb3qCQjdwyJqL',
+    authentication:       'plain',
+    ssl:                  true
+  }
+
   # Default Locale
   config.i18n.default_locale = :'pt-BR'
 
