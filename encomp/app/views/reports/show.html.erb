@@ -1,0 +1,5 @@
+<%= render "header" %>
+Link para download das tabelas em formato do Excel: <%= link_to 'Download', reports_show_tables_url(@type, format: :xlsx) %>
+<%= render partial: 'items', locals: { subs: @subs,
+                                       subs_paid: @subs_paid,
+                                       subs_not_paid: @subs_not_paid } %>
