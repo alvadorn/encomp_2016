@@ -62,6 +62,9 @@ gem 'will_paginate', '~> 3.1.0'
 # Queue Classic
 gem 'queue_classic', '~> 3.1.0'
 
+# Spreadsheet
+gem 'to_spreadsheet', '~> 1.0.6'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

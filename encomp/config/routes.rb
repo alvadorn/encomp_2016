@@ -25,5 +25,11 @@ Rails.application.routes.draw do
       patch "/pagamento/:id", to: "users#payment", as: "user_payment_confirm"
     end
 
+    scope "/relatorios" do
+      get "/", to: "reports#index", as: "reports_list"
+      get "/camisas", to: "reports#show_shirts", as: "reports_shirt_size"
+      get "/:type", to: "reports#show", as: "reports_show_tables"
+    end
+
   end
 end

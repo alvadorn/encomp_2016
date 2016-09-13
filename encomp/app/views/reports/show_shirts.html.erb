@@ -1,0 +1,5 @@
+<%= render partial: "header" %>
+<% @sizes.each do |size| %>
+  <%= size.shirt %>: <%= @users.where(shirt: size.shirt).count %> camisas
+  <br />
+<% end %>
