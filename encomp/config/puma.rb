@@ -41,7 +41,6 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 #
 on_worker_boot do
   ActiveRecord::Base.establish_connection if defined?(ActiveRecord)
-  @qc_pid ||= spawn("bundle exec rake qd:work")
 end
 
 # Allow puma to be restarted by `rails restart` command.
