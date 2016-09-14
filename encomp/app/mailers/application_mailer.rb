@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'Encomp Oficial <contato@encomp.com.br>', bcc: "jirachi.guardian@gmail.com"
+  default from: 'Encomp Oficial <contato@encomp.com.br>'
   layout 'mailer'
 end

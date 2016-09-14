@@ -4,12 +4,13 @@
   <meta charset=“UTF-8”>
 </head>
 <body>
-  <h1><%= title %> </h1>
-  <hr />
+  <h1><%= @title %> </h1>
   <p>Olá <%= @user.name %>, a equipe do Encomp tem uma mensagem para você:</p>
+  <hr />
+
 
   <div class="body">
-    <%= raw(@body) %>
+    <%= simple_format(@body) %>
   </div>
 
   <hr />

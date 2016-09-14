@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
     scope "/email" do
       get "/", to: "mailer#index", as: "mailer_index"
-      post "/enviar", to: "mailer#send_email", as: "mail_send_email"
+      post "/enviar", to: "mailer#send_email", as: "mailer_send_email"
     end
 
   end
