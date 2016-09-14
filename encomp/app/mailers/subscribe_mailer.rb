@@ -10,6 +10,13 @@ class SubscribeMailer < ApplicationMailer
     mail(to: @user.email, subject: "Inscrição confirmada com sucesso!")
   end
 
+  def custom_email(user, title, body)
+    @user = user
+    @body = body
+    @title = title
+    mail(to: @user.email, subject: @title)
+  end
+
   def test_email(mail)
     mail(to: mail, subject: "test mail")
   end

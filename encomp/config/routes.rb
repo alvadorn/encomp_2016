@@ -31,5 +31,10 @@ Rails.application.routes.draw do
       get "/:type", to: "reports#show", as: "reports_show_tables"
     end
 
+    scope "/email" do
+      get "/", to: "mailer#index", as: "mailer_index"
+      post "/enviar", to: "mailer#send_email", as: "mail_send_email"
+    end
+
   end
 end

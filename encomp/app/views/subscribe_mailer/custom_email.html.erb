@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title><%= @title %></title>
+  <meta charset=“UTF-8”>
+</head>
+<body>
+  <h1><%= title %> </h1>
+  <hr />
+  <p>Olá <%= @user.name %>, a equipe do Encomp tem uma mensagem para você:</p>
+
+  <div class="body">
+    <%= raw(@body) %>
+  </div>
+
+  <hr />
+  <p>Para quaisquer dúvidas ou problemas entrem em contato através do email: contato@encomp.com.br</p>
+</body>
+</html>
