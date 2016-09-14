@@ -22,6 +22,9 @@ class ReportsController < AdminController
   def show_shirts
     @sizes = User.select(:shirt).distinct
     @users = User.where(admin: false).where(auxiliar: false)
+
+    @sizes_paid = User.select(:shirt).where(paid: true).distinct
+    @users_paid = @users.where(paid: true)
   end
 
   private

@@ -1,5 +1,16 @@
 <%= render partial: "header" %>
+<strong>Quantidade total de camisas:</strong>
+<br />
 <% @sizes.each do |size| %>
   <%= size.shirt %>: <%= @users.where(shirt: size.shirt).count %> camisas
+  <br />
+<% end %>
+
+<hr />
+
+<strong>Quantidade total de camisas de inscritos que já pagaram:</strong>
+<br />
+<% @sizes_paid.each do |size| %>
+  <%= size.shirt %>: <%= @users_paid.where(shirt: size.shirt).count %> camisas
   <br />
 <% end %>
