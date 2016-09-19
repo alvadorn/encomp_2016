@@ -2,6 +2,7 @@
   <caption>Todos os inscritos</caption>
   <thead>
     <tr>
+      <th>Id</td>
       <th>Nome</th>
       <th>Email</th>
     </tr>
@@ -9,6 +10,7 @@
   <tbody>
     <% subs.each do |sub| %>
     <tr>
+      <td><%= sub.id %></td>
       <td><%= sub.name %></td>
       <td><%= sub.email %></td>
     </tr>
@@ -20,6 +22,7 @@
   <caption>Inscritos que já pagaram</caption>
   <thead>
     <tr>
+      <th>Id</td>
       <th>Nome</th>
       <th>Email</th>
     </tr>
@@ -27,6 +30,7 @@
   <tbody>
     <% subs_paid.each do |sub| %>
     <tr>
+      <td><%= sub.id %></td>
       <td><%= sub.name %></td>
       <td><%= sub.email %></td>
     </tr>
@@ -38,6 +42,7 @@
   <caption>Inscritos que ainda não pagaram</caption>
   <thead>
     <tr>
+      <th>Id</td>
       <th>Nome</th>
       <th>Email</th>
     </tr>
@@ -45,6 +50,7 @@
   <tbody>
     <% subs_not_paid.each do |sub| %>
     <tr>
+      <td><%= sub.id %></td>
       <td><%= sub.name %></td>
       <td><%= sub.email %></td>
     </tr>
