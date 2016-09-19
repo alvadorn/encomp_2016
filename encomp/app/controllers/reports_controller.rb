@@ -37,35 +37,35 @@ class ReportsController < AdminController
     @subs_not_paid = nil
     @subs_paid = nil
     if type == "inscritos"
-      @subs = User.where("admin = false and auxiliar = false")
+      @subs = User.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = User.where("admin = false and auxiliar = false").where(paid: false)
       @subs_paid = User.where("admin = false and auxiliar = false").where(paid: true)
     elsif type == "ror"
-      @subs = Course.find_by(name: "Ruby On Rails").users.where("admin = false and auxiliar = false")
+      @subs = Course.find_by(name: "Ruby On Rails").users.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = @subs.where(paid: false)
       @subs_paid = @subs.where(paid: true)
     elsif type == "git"
-      @subs = Course.find_by(name: "Git").users.where("admin = false and auxiliar = false")
+      @subs = Course.find_by(name: "Git").users.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = @subs.where(paid: false)
       @subs_paid = @subs.where(paid: true)
     elsif type == "visita"
-      @subs = Course.find_by(name: "Visita técnica").users.where("admin = false and auxiliar = false")
+      @subs = Course.find_by(name: "Visita técnica").users.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = @subs.where(paid: false)
       @subs_paid = @subs.where(paid: true)
     elsif type == "linux"
-      @subs = Course.find_by(name: "Linux").users.where("admin = false and auxiliar = false")
+      @subs = Course.find_by(name: "Linux").users.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = @subs.where(paid: false)
       @subs_paid = @subs.where(paid: true)
     elsif type == "machine_learning"
-      @subs = Course.find_by(name: "Aprendizado de Máquina").users.where("admin = false and auxiliar = false")
+      @subs = Course.find_by(name: "Aprendizado de Máquina").users.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = @subs.where(paid: false)
       @subs_paid = @subs.where(paid: true)
     elsif type == "robotica"
-      @subs = Course.find_by(name: "Robótica").users.where("admin = false and auxiliar = false")
+      @subs = Course.find_by(name: "Robótica").users.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = @subs.where(paid: false)
       @subs_paid = @subs.where(paid: true)
     elsif type == "torneio"
-      @subs = Course.find_by(name: "Torneio de Programação").users.where("admin = false and auxiliar = false")
+      @subs = Course.find_by(name: "Torneio de Programação").users.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = @subs.where(paid: false)
       @subs_paid = @subs.where(paid: true)
     else
