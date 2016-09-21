@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     scope "/relatorios" do
       get "/", to: "reports#index", as: "reports_list"
       get "/camisas", to: "reports#show_shirts", as: "reports_shirt_size"
+      get "/trafico_informacoes", to: "reports#venda", as: "reports_show_trafico_de_informacoes"
       get "/:type", to: "reports#show", as: "reports_show_tables"
     end
 

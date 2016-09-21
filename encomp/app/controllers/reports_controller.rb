@@ -27,6 +27,15 @@ class ReportsController < AdminController
     @users_paid = @users.where(paid: true)
   end
 
+
+  def venda
+    @data = User.where("admin = false and auxiliar = false").order(:name)
+    respond_to do |format|
+      format.html
+      format.xlsx { render xlsx: :venda, filename: "dados-encomp-2016" }
+    end
+  end
+
   private
   def set_user
     @user = current_user
@@ -38,8 +47,8 @@ class ReportsController < AdminController
     @subs_paid = nil
     if type == "inscritos"
       @subs = User.where("admin = false and auxiliar = false").order(:name)
-      @subs_not_paid = User.where("admin = false and auxiliar = false").where(paid: false)
-      @subs_paid = User.where("admin = false and auxiliar = false").where(paid: true)
+      @subs_not_paid = @subs.where(paid: false)
+      @subs_paid = @subs.where(paid: true)
     elsif type == "ror"
       @subs = Course.find_by(name: "Ruby On Rails").users.where("admin = false and auxiliar = false").order(:name)
       @subs_not_paid = @subs.where(paid: false)

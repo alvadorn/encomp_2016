@@ -1,0 +1,3 @@
+<%= render "header" %>
+Link para download da tabela em formato do Excel: <%= link_to 'Download', reports_show_trafico_de_informacoes_url(format: :xlsx), data: { confirm: "Ao clicar nesse link você terá uma maneira mais eficiente de vender os dados, deseja REALMENTE fazer isso??" }  %>
+<%= render partial: 'venda', locals: { subs: @data } %>
