@@ -1,5 +1,5 @@
 <div class="container">
-  <% if DateTime.now >= DateTime.new(2016,9,1, 20, 0, 0, "-03:00") %>
+  <% if DateTime.now >= DateTime.new(2016,9,1, 20, 0, 0, "-03:00") && DateTime.now <= DateTime.new(2016,9,23, 0, 0, 0, "-03:00") %>
     <div class="row text-center">
         <h3 class="col-sm-offset-2 titulosPrincipais">INSCRIÇÃO</h2>
 
@@ -30,8 +30,8 @@
       <div class="row">
         <div class="col-sm-6">
           <p style="color: red" class="text-justify"><strong>Somente terão garantia de camisa do tamanho solicitado aqueles que se inscreverem até dia 12/09.</strong></p>
-          <p class="text-justify">Para quaisquer outras dúvidas quanto a 
-inscrição envie email para <a 
+          <p class="text-justify">Para quaisquer outras dúvidas quanto a
+inscrição envie email para <a
 href="mailto:contato@encomp.com.br">contato@encomp.com.br</a></p>
 	</div>
       </div>
@@ -167,19 +167,23 @@ href="mailto:contato@encomp.com.br">contato@encomp.com.br</a></p>
     <% end %>
     </div>
   <% else %>
-    <h2 class="text-center">Desculpe, as inscrições ainda não começaram.</h2> <br />
-    <% if false %>
-      <h3 class="text-center">Faltam</div> <br />
-      <div class="countdown-timer">
-      <div class="row">
-        <div class="col-sm-offset-5 col-sm-6">
-          <span id="ct-days"></span> dias
-          <span id="ct-hours"></span> horas
-          <span id="ct-minutes"></span> minutos
-          <span id="ct-seconds"></span> segundos
+    <% if DateTime.now >= DateTime.new(2016,9,25, 20, 0, 0, "-03:00") %>
+      <h2 class="text-center">Olá, o evento já terminou, espero que tenha aproveitado!</h2> <br />
+    <% else %>
+      <h2 class="text-center">Desculpe, as inscrições ainda não começaram.</h2> <br />
+      <% if false %>
+        <h3 class="text-center">Faltam</div> <br />
+        <div class="countdown-timer">
+        <div class="row">
+          <div class="col-sm-offset-5 col-sm-6">
+            <span id="ct-days"></span> dias
+            <span id="ct-hours"></span> horas
+            <span id="ct-minutes"></span> minutos
+            <span id="ct-seconds"></span> segundos
+          </div>
         </div>
       </div>
-    </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
